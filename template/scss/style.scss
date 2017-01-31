@@ -1,0 +1,15 @@
+// import Bootstrap 4 Grid System (Flex) Version Currently v4.0.0-alpha.6
+// https://github.com/m-spyratos/bootstrap-4-grid
+@import "base/global";
+// base
+@import "base/global";
+@import "base/header";
+@import "base/footer";
+// modules
+@import "modules/contacts";
+@import "modules/news";
+@import "modules/portfolio";
+@import "modules/reviews";
+@import "modules/slideshow";
+// pages
+// @import "";
