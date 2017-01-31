@@ -1,5 +1,5 @@
 {
-  "name": "N-family",
+  "name": "n-family",
   "description": "projet",
   "main": "Gruntfile.js",
   "authors": [
@@ -15,5 +15,8 @@
     "tests"
   ],
   "devDependencies": {
+    "jquery": "^3.1.1",
+    "slick-carousel": "^1.6.0",
+    "bootstrap-4-grid": "^1.0.2"
   }
 }

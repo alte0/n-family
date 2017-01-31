@@ -3,11 +3,15 @@ module.exports = function(grunt) {
   require("load-grunt-tasks")(grunt);
 
   grunt.initConfig({
-    less: {
-      dev: {
+
+    sass: {
+      options: {
+          sourceMap: true
+        },
+      dist: {
         files: {
-          // компилируем less - куда:откуда
-          "build/css/style.css": "src/less/style.less"
+          // компилируем sass - куда:откуда
+            'assets/css/style.css': 'template/scss/style.scss'
         }
       }
     },
@@ -31,7 +35,7 @@ module.exports = function(grunt) {
         ]
       },
       //какой файл
-      style: {src: "build/css/*.css"}
+      style: {src: "assets/css/*.css"}
     },
 
     //минифицируем css
@@ -41,7 +45,7 @@ module.exports = function(grunt) {
           report: "gzip"
         },
         files: {
-          "build/css/style.min.css" : ["build/css/style.css"]
+          "assets/css/style.min.css" : ["assets/css/style.css"]
         }
       }
     },
@@ -54,7 +58,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: ["build/img/**/*.{png, jpg, gif}"]
+          src: ["assets/img/**/*.{png, jpg, gif}"]
         }]
       }
     },
@@ -62,24 +66,20 @@ module.exports = function(grunt) {
     // следим за изменениями
     watch: {
       style: {
-        // изменились less файлы запускаем tasks
-        files: ["src/less/**/*.less"],
-        tasks: ["less", "postcss", "csso"]
+        // изменились sass файлы запускаем tasks
+        files: ["template/scss/**/*.scss"],
+        tasks: ["sass", "postcss", "csso"]
       },
-      // html: {
-      //   files: ["src/*.html"],
-      //   tasks: ["copy:html"]
-      // },
       pug: {
-        files: ["src/*.pug"],
+        files: ["template/*.pug"],
         tasks: ["pug"]
       },
       img: {
-        files: ["src/img/**/*.*"],
-        tasks: ["build"]
+        files: ["template/img/**/*.*"],
+        tasks: ["copy", "imagemin"]
       },
       rigger: {
-        files: ["src/js/**/*.*"],
+        files: ["template/js/**/*.*"],
         tasks: ["rigger"]
       }
     },
@@ -90,33 +90,23 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           //makes all src relative to cwd (относительно какой папки брать())
-          cwd: 'src/',
+          cwd: 'template/',
           src: [
-          // "fonts/**/*.{woff,woff2}",
           "fonts/**/*.*",
           "img/**"
           // ,
           // "js/**"
           // ,
-          // "*.html"
           ],
           //куда копировать
-          dest: "build"
+          dest: "assets"
         }]
       }
-      // ,
-      // html: {
-      //   files: [{
-      //     expand: true,
-      //     src: ["src/*.html"],
-      //     dest: "build"
-      //   }]
-      // }
     },
 
     //удаляем папку перед копированием
     clean: {
-      build: ["build"]
+      build: ["assets"]
     },
 
 
@@ -125,12 +115,12 @@ module.exports = function(grunt) {
         dev: {
             bsFiles: {
                 src : [
-                    "build/**/*.*"
+                    "assets/**/*.*"
                 ]
             },
             options: {
                 watchTask: true,
-                server: "build/.",
+                server: "assets/.",
 								directory: true
             }
         }
@@ -145,20 +135,42 @@ module.exports = function(grunt) {
         },
         files: {
           expand: true,
-          cwd: 'src/',
+          cwd: 'template/',
           src: ['*.pug'],
-          dest: 'build',
+          dest: 'assets',
           ext: '.html'
         }
     },
 
+    //concat js 
     rigger: {
       compile: {
         files: {
-          'build/js/main.js': ['src/js/main.js']
+          'assets/js/main.js': ['template/js/main.js']
         }
       }
+    },
+
+    //сжимаем js 
+      uglify: {
+        my_target_js: {
+          files: [{
+              expand: true,
+              cwd: 'assets/js',
+              src: '**/*.js',
+              dest: 'assets/js'
+          }]
+        }
+      },
+
+     sprite:{
+      all: {
+        src: 'template/sprites/*.png',
+        dest: 'assets/img/sprite.png',
+        destCss: 'template/scss/sprites.scss'
+      }
     }
+
 
   });
 
@@ -168,12 +180,13 @@ module.exports = function(grunt) {
     grunt.registerTask("build", [
       "clean",
       "copy",
-      "less",
+      "sass",
       "postcss",
       "csso",
       "imagemin",
       "pug",
-      "rigger"
+      "rigger",
+      "uglify"
       ]);
 
 };
