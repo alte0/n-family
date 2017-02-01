@@ -1,3 +1,8 @@
 @mixin text-uppercase {
 	text-transform: uppercase;
 }
+@mixin no-style-ul {
+	padding: 0;
+	list-style-type: none;
+	margin: 0;
+}

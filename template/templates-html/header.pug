@@ -1,24 +1,29 @@
 .container-fluid
 	#header.row.header
-		.header-header.col-xl-12
-			span.header-title Семейное видео
-			span.header-title.header-title__big Орлавс
-			ul.social-btns
-				li:a.link.social-btn__inst(href="#")
-				li:a.link.social-btn__vk(href="#")
-				li:a.link.social-btn__fb(href="#")
-		nav.main-navigation
-			ul.panel-menu
-				li:a.link.panel-menu-item(href="#")
-			ul.main-menu.main-menu-lists
-				li:a.link.main-menu-item(href="#about") О нас
-				li:a.link.main-menu-item(href="#portfolio") Портфолио
-				li:a.link.main-menu-item(href="#reviews") Отзыввы
-				li:a.link.main-menu-item(href="#contacts") Контакты
-		.header-footer.col-xl-12
-			img.logo-header(src="img/logo-header.png" alt="Максим и Ксения Орловы")
-			span.header-slogan Мы снимаем жизнь		
-			ul.video-control-group
-				li:a.link.video-control-group-item(href="#")
-				li:a.link.video-control-group-item(href="#")
-			a.link.btn.btn__blue.order-video(href="#") Заказать семейное видео от орлавс
+		.col-xl-12
+			.row.header-header
+				span.w-100.header-title Семейное видео
+				span.w-100.header-title.header-title__big Орлавс
+				ul.w-100.social-btns
+					li:a.link.social-btn__inst(href="#")
+					li:a.link.social-btn__vk(href="#")
+					li:a.link.social-btn__fb(href="#")
+			
+			nav.main-navigation.w-100
+				ul.panel-menu
+					li.panel-menu-item: a.link(href="#")
+				ul.main-menu.main-menu-lists
+					li: a.link.main-menu-item(href="#about") О нас
+					li: a.link.main-menu-item(href="#portfolio") Портфолио
+					li: a.link.main-menu-item(href="#reviews") Отзыввы
+					li: a.link.main-menu-item(href="#contacts") Контакты
+			.row.header-footer
+				.w-100
+					img.header-logo(src="img/logo-header-mobile.png" alt="Максим и Ксения Орловы")
+				.w-100
+					span.header-slogan Мы снимаем жизнь		
+				.w-100
+					ul.video-control-group
+						li.video-control-group-item.video-control-group-item__pause-play: a.link(href="#")
+						li.video-control-group-item.video-control-group-item__sound: a.link(href="#")
+		a.link.btn.btn__blue.order-video(href="#") Заказать семейное видео от орлавс
