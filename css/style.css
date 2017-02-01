@@ -1281,6 +1281,108 @@ body {
   font-weight: normal;
   font-style: normal; }
 
+.header {
+  position: relative;
+  color: white;
+  background: url(../img/bg-header.jpg) 41% 50% no-repeat;
+  background-size: cover;
+  text-align: center; }
+  .header-title {
+    font-size: 20px;
+    line-height: 39px;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+    font-weight: 900; }
+    .header-title__big {
+      font-size: 54px;
+      line-height: 27px;
+      letter-spacing: -0.05em; }
+  .header-footer {
+    padding-top: 221px; }
+  .header-slogan {
+    font-size: 33.33px;
+    line-height: 28.53px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -0.05em; }
+  .header .social-btns {
+    display: none; }
+
+.video-control-group {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  text-align: center;
+  font-size: 0;
+  padding-top: 9px;
+  margin-bottom: 86px; }
+  .video-control-group-item {
+    display: inline-block;
+    border: 1px solid #b9b9b9;
+    background-color: white; }
+    .video-control-group-item .link {
+      height: 24px;
+      width: 32px;
+      display: inline-block; }
+    .video-control-group-item:first-child {
+      border-right: 1px solid transparent;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px; }
+    .video-control-group-item:last-child {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px; }
+
+.order-video {
+  font-size: 16.67px;
+  line-height: 13.6px;
+  letter-spacing: -0.05em;
+  color: white;
+  max-width: 200px;
+  background-color: #2f64a1;
+  border-radius: 10px;
+  padding: 7px;
+  text-transform: uppercase;
+  font-weight: 900;
+  position: absolute;
+  bottom: 17px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: rotate(-2deg); }
+
+.panel-menu, .main-menu {
+  padding: 0;
+  list-style-type: none;
+  margin: 0; }
+
+.main-navigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1; }
+
+.main-menu-item {
+  color: white;
+  font-size: 25px;
+  line-height: 42px;
+  letter-spacing: -0.05em;
+  font-weight: 900;
+  text-transform: uppercase; }
+
+.panel-menu {
+  padding-top: 87px; }
+  .panel-menu-item {
+    display: inline-block;
+    border: 1px solid #666462;
+    border-radius: 3px; }
+    .panel-menu-item .link {
+      display: inherit;
+      height: 18px;
+      width: 23px;
+      background-color: white; }
+
 .contacts {
   display: none;
   color: white;
