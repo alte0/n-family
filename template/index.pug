@@ -2,18 +2,18 @@ extends templates-html/layout.pug
 block contacts
 	.container-fluid
 		.row#contacts.contacts.justify-content-between
-			.col-5
-				.contacts-header
-					img.logo-contacts(src="img/logo-contacts.png" alt="Максим и Ксения Орловы")
-					.contacts-info
+			.col-6
+				.row.contacts-header
+					img.logo-contacts(src="img/logo-contacts.png" height="239" width="247" alt="Максим и Ксения Орловы")
+					.col.contacts-info
 						.contacts-info-name Максим и Ксения
 						.contacts-info-surname Орловы
 						a.link.tel(href="tel:89323212509") 8 (932) 321-25-09
 						a.link.btn.btn__green.email(href="mailto:info@orloves.com") info@orloves.com
-				.contacts-footer
+				.row.justify-content-center.contacts-footer
 						a.link.call(href="#") Заказать звонок
 						span.contacts-slogan У каждого ребёнка должен быть фильм от орлавс
-				a.link.contacts-close(href="#")
+			a.link.contacts-close(href="#")
 
 block content
 	.container-fluid

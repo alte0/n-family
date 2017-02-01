@@ -1,0 +1,88 @@
+.contacts {
+	display: none;
+	color: white;
+	position: relative;
+	padding-top: 64px;
+	padding-bottom: 70px;
+	background: url(../img/bg-contacts.jpg) top center no-repeat;
+	&-header {
+		margin-left: 128px
+	}
+	&-footer {
+		text-align: center;
+		padding-top: 8px;
+	}
+	&-info {
+		padding-top: 26px;
+		padding-left: 22px;
+	}
+	&-info-name {
+		font-size: 43.95px;
+		line-height: 58.57px;
+		letter-spacing: -0.05em;
+	}
+	&-info-surname {
+		font-size: 95.83px;
+		line-height: 64.85px;
+		letter-spacing: -0.06em;
+	}
+	&-info-name, &-info-surname {
+		@include text-uppercase;
+		font-weight: 900;
+	}
+	&-slogan {
+		color: white;
+		font-size: 33.33px;
+		line-height: 37.5px;
+		letter-spacing: -0.07em;
+		padding: 0 240px;
+		@include text-uppercase;
+	}
+	&-close {
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 86px;
+		height: 85px;
+		bottom: 49px;
+		margin: auto;
+		&:after {
+			position: absolute;
+			content: "";
+			background: url(../img/btn-close-contacts.svg);
+			width: 86px;
+			height: 85px;
+		}
+	}
+}
+
+.tel, .email {
+	color: white;
+	display: block;
+	line-height: 53px;
+	@include text-uppercase;
+}
+.tel {
+	font-size: 50px;
+	letter-spacing: -0.07em;
+	padding-left: 36px;
+}
+.email {
+	font-size: 33.3px;
+	padding-left: 49px;
+}
+.call, .contacts-slogan{
+	font-weight: 900;
+	// display: inline-block;
+}
+.call {
+	@include text-uppercase;
+	color: #426ea2;
+	font-size: 29.17px;
+	// line-height: 66.67px;
+	letter-spacing: -0.07em;
+	background-color: #6fb92f;
+	padding: 13px 37px 15px 25px;
+	border-radius: 15px;
+	margin-bottom: 14px;
+}
