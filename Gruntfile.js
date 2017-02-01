@@ -68,7 +68,8 @@ module.exports = function(grunt) {
       style: {
         // изменились sass файлы запускаем tasks
         files: ["template/scss/**/*.scss"],
-        tasks: ["sass", "postcss", "csso"]
+        tasks: ["sass"]
+        // tasks: ["sass", "postcss", "csso"]
       },
       pug: {
         files: ["template/*.pug"],

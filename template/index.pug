@@ -1,8 +1,53 @@
 extends templates-html/layout.pug
+block contacts
+	.container-fluid
+		.row#contacts.contacts.justify-content-between
+			.col-5
+				.contacts-header
+					img.logo-contacts(src="img/logo-contacts.png" alt="Максим и Ксения Орловы")
+					.contacts-info
+						.contacts-info-name Максим и Ксения
+						.contacts-info-surname Орловы
+						a.link.tel(href="tel:89323212509") 8 (932) 321-25-09
+						a.link.btn.btn__green.email(href="mailto:info@orloves.com") info@orloves.com
+				.contacts-footer
+						a.link.call(href="#") Заказать звонок
+						span.contacts-slogan У каждого ребёнка должен быть фильм от орлавс
+				a.link.contacts-close(href="#")
+
 block content
-	//- .row
-	//- 	.col col
-	//- 	.col col
-	//- 	.w-100 col
-	//- 	.col col
-	//- 	.col col
+	.container-fluid
+		#portfolio.row.portfolio
+			.col-xl-12
+				.portfolio-title Наше портфолио
+				a.link.portfolio-video(href="#")
+					.portfolio-video-title Фильм о двоих
+				a.link.portfolio-video(href="#")
+					.portfolio-video-title Семейный фильм
+				a.link.portfolio-video(href="#")
+					.portfolio-video-title Семейный клип
+				a.link.portfolio-video(href="#")
+					.portfolio-video-title Детский сад
+				a.link.portfolio-video(href="#")
+					.portfolio-video-title Дни рождения
+				a.link.btn.btn__blue.order-video(href="#") Заказать семейное видео от орлавс
+	.container-fluid
+		#slideshow.row.slideshow
+			.slideshow-item.col-xl-12
+	.container-fluid
+		#reviews.row.reviews
+			.reviews-item.col-xl-12
+				img.reviews-img(src="img/reviews.png" alt="Семья фадеевых")
+				.reviews-item-desc
+					a.link.reviews-family(href="#") Фадеевых 
+						span.animate-text.arrow-blue история съёмок
+					p.reviews-text Орловы кайфуют в процессе, у них горят глаза и куча идей, поэтому в такой озитивной и дружеской обстановке рождаются большие шедевры маленьких семей, как наша:) весь съемочный процесс мы шутили и смеялись)пару дней назад мы сотворили второй наш проектик , фильм о нашем, недавно родившемся сыне)
+					a.link.reviews-all(href="#") Все отзывы 
+						span.animate-text.arrow-green о нас
+	.container-fluid
+		#reviews.row.news
+			a.link.news-all.arrow-white(href="#") Все новости
+			.news-item.col-xl-12
+				.news-text
+					.news-title Мы создаем наш сайт
+					.news-desc 1 декабря 2016 стартуем
