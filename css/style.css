@@ -1254,6 +1254,9 @@ body {
   font-weight: normal;
   margin: 0; }
 
+.link {
+  text-decoration: none; }
+
 @font-face {
   font-family: 'Gotham Pro';
   src: url("..../fonts/GothamPro-Light.ttf") format("truetype"), url("../fonts/GothamPro-Light.svg#GothamPro-Light") format("svg");
@@ -1277,5 +1280,81 @@ body {
   src: url("../fonts/GothamPro.ttf") format("truetype"), url("../fonts/GothamPro.svg#GothamPro") format("svg");
   font-weight: normal;
   font-style: normal; }
+
+.contacts {
+  display: none;
+  color: white;
+  position: relative;
+  padding-top: 64px;
+  padding-bottom: 70px;
+  background: url(../img/bg-contacts.jpg) top center no-repeat; }
+  .contacts-header {
+    margin-left: 128px; }
+  .contacts-footer {
+    text-align: center;
+    padding-top: 8px; }
+  .contacts-info {
+    padding-top: 26px;
+    padding-left: 22px; }
+  .contacts-info-name {
+    font-size: 43.95px;
+    line-height: 58.57px;
+    letter-spacing: -0.05em; }
+  .contacts-info-surname {
+    font-size: 95.83px;
+    line-height: 64.85px;
+    letter-spacing: -0.06em; }
+  .contacts-info-name, .contacts-info-surname {
+    text-transform: uppercase;
+    font-weight: 900; }
+  .contacts-slogan {
+    color: white;
+    font-size: 33.33px;
+    line-height: 37.5px;
+    letter-spacing: -0.07em;
+    padding: 0 240px;
+    text-transform: uppercase; }
+  .contacts-close {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 86px;
+    height: 85px;
+    bottom: 49px;
+    margin: auto; }
+    .contacts-close:after {
+      position: absolute;
+      content: "";
+      background: url(../img/btn-close-contacts.svg);
+      width: 86px;
+      height: 85px; }
+
+.tel, .email {
+  color: white;
+  display: block;
+  line-height: 53px;
+  text-transform: uppercase; }
+
+.tel {
+  font-size: 50px;
+  letter-spacing: -0.07em;
+  padding-left: 36px; }
+
+.email {
+  font-size: 33.3px;
+  padding-left: 49px; }
+
+.call, .contacts-slogan {
+  font-weight: 900; }
+
+.call {
+  text-transform: uppercase;
+  color: #426ea2;
+  font-size: 29.17px;
+  letter-spacing: -0.07em;
+  background-color: #6fb92f;
+  padding: 13px 37px 15px 25px;
+  border-radius: 15px;
+  margin-bottom: 14px; }
 
 /*# sourceMappingURL=style.css.map */
