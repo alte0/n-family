@@ -1298,7 +1298,7 @@ body {
       line-height: 27px;
       letter-spacing: -0.05em; }
   .header-footer {
-    padding-top: 177px; }
+    padding-top: 220px; }
   .header-slogan {
     font-size: 33.33px;
     line-height: 28.53px;
@@ -1356,14 +1356,21 @@ body {
   margin: 0; }
 
 .main-menu {
-  position: absolute;
-  top: 40px;
-  right: 0;
-  left: 0;
   display: none; }
+  .main-menu-js {
+    display: block; }
 
 .main-navigation {
   position: relative; }
+  .main-navigation-js {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    padding-top: 67px; }
 
 .main-menu-item {
   color: white;
@@ -1374,7 +1381,12 @@ body {
   text-transform: uppercase; }
 
 .panel-menu {
-  padding-top: 20px; }
+  padding-top: 20px;
+  position: absolute;
+  right: 0;
+  left: 0; }
+  .panel-menu-js {
+    position: static; }
   .panel-menu-item .link {
     display: inline-block;
     border: 1px solid #666462;
