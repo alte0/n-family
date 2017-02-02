@@ -19,7 +19,8 @@
 		}
 	}
 	&-footer {
-		padding-top: 177px;
+		// padding-top: 177px;
+		padding-top: 220px;
 	}
 	&-slogan {
 		font-size: 33.33px;
@@ -81,23 +82,23 @@
 }
 .main {
 	&-menu {
-		position: absolute;
-		top: 40px;
-		right: 0;
-		left: 0;
 		display: none;
-		
+		&-js {
+			display: block;
+		}
 	}
 	&-navigation {
-	position: relative;
-	// position: absolute;
-	// top: 0;
-	// bottom: 0;
-	// right: 0;
-	// left: 0;
-	// background-color: rgba(0, 0, 0, 0.5);
-	// z-index: 1;
-	// padding-top: 67px;
+		position: relative;
+		&-js {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 1;
+			padding-top: 67px;
+			}
 	}
 	&-menu-item {
 		color: white;
@@ -110,6 +111,12 @@
 }
 .panel-menu {
 	padding-top: 20px;
+	position: absolute;
+	right: 0;
+	left: 0;
+	&-js {
+		position: static;
+	}
 	&-item {
 		& .link {
 			display: inline-block;
