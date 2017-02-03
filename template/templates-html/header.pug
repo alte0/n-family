@@ -5,21 +5,27 @@
 				span.w-100.header-title Семейное видео
 				span.w-100.header-title.header-title__big Орлавс
 				ul.w-100.social-btns
-					li:a.link.social-btn__inst(href="#")
-					li:a.link.social-btn__vk(href="#")
-					li:a.link.social-btn__fb(href="#")
+					li.social-btn.social-btn__inst: a.link(href="#" target="_blank")
+					li.social-btn.social-btn__vk: a.link(href="#" target="_blank")
+					li.social-btn.social-btn__fb: a.link(href="#" target="_blank")
 			
 			nav.main-navigation
+				//- .main-navigation__js
 				ul.panel-menu
+					//- .panel-menu__js
 					li.panel-menu-item: a.link(href="#")
 				ul.main-menu.main-menu-lists
+					//- .main-menu__js
 					li: a.link.main-menu-item(href="#about") О нас
 					li: a.link.main-menu-item(href="#portfolio") Портфолио
 					li: a.link.main-menu-item(href="#reviews") Отзыввы
 					li: a.link.main-menu-item(href="#contacts") Контакты
 			.row.header-footer
 				.w-100
-					img.header-logo(src="img/logo-header-mobile.png" alt="Максим и Ксения Орловы")
+					picture
+						source(media="(min-width:1915px)" srcset="img/logo-header.png")
+						source(media="(min-width:1000px)" srcset="img/logo-header-tablet.png")
+						img.header-logo(src="img/logo-header-mobile.png" alt="Максим и Ксения Орловы")
 				.w-100
 					span.header-slogan Мы снимаем жизнь		
 				.w-100
