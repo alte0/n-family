@@ -26,9 +26,9 @@
         <div class="col-xl-12">
           <div class="row header-header"><span class="w-100 header-title">Семейное видео</span><span class="w-100 header-title header-title__big">Орлавс</span>
             <ul class="w-100 social-btns">
-              <li:a class="link social-btn__inst" href="#"></li:a>
-              <li:a class="link social-btn__vk" href="#"></li:a>
-              <li:a class="link social-btn__fb" href="#"></li:a>
+              <li class="social-btn social-btn__inst"><a class="link" href="#" target="_blank"></a></li>
+              <li class="social-btn social-btn__vk"><a class="link" href="#" target="_blank"></a></li>
+              <li class="social-btn social-btn__fb"><a class="link" href="#" target="_blank"></a></li>
             </ul>
           </div>
           <nav class="main-navigation">
@@ -43,7 +43,12 @@
             </ul>
           </nav>
           <div class="row header-footer">
-            <div class="w-100"><img class="header-logo" src="img/logo-header-mobile.png" alt="Максим и Ксения Орловы"></div>
+            <div class="w-100">
+              <picture>
+                <source media="(min-width:1915px)" srcset="img/logo-header.png">
+                <source media="(min-width:1000px)" srcset="img/logo-header-tablet.png"><img class="header-logo" src="img/logo-header-mobile.png" alt="Максим и Ксения Орловы">
+              </picture>
+            </div>
             <div class="w-100"><span class="header-slogan">Мы снимаем жизнь		</span></div>
             <div class="w-100">
               <ul class="video-control-group">
