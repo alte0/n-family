@@ -78,11 +78,18 @@
 .call {
 	@include text-uppercase;
 	color: #426ea2;
-	font-size: 29.17px;
-	// line-height: 66.67px;
 	letter-spacing: -0.07em;
+	line-height: 31.45px;
 	background-color: #6fb92f;
-	padding: 13px 37px 15px 25px;
-	border-radius: 15px;
-	margin-bottom: 14px;
+	@media (min-width: 1000px) {
+		font-size: 25px;
+		line-height: 62.39px;
+	}
+	@media (min-width: 1915px) {
+		font-size: 29.17px;
+		line-height: 66.67px;
+		padding: 13px 37px 15px 25px;
+		border-radius: 15px;
+		margin-bottom: 14px;
+	}
 }

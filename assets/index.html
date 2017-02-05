@@ -62,61 +62,73 @@
     </div>
     <div class="container-fluid">
       <div class="row portfolio" id="portfolio">
-        <div class="col-xl-12">
-          <div class="portfolio-title">Наше портфолио</div><a class="link portfolio-video" href="#">
-            <div class="portfolio-video-title">Фильм о двоих</div></a><a class="link portfolio-video" href="#">
-            <div class="portfolio-video-title">Семейный фильм</div></a><a class="link portfolio-video" href="#">
-            <div class="portfolio-video-title">Семейный клип</div></a><a class="link portfolio-video" href="#">
-            <div class="portfolio-video-title">Детский сад</div></a><a class="link portfolio-video" href="#">
-            <div class="portfolio-video-title">Дни рождения</div></a><a class="link btn btn__blue order-video" href="#">Заказать семейное видео от орлавс</a>
-        </div>
+        <div class="portfolio-title">Наше портфолио</div>
+        <div class="portfolio-video-wrap"><a class="link portfolio-video" href="#">
+            <h3 class="portfolio-video-title">Семейный клип</h3></a><a class="link portfolio-video" href="#">
+            <h3 class="portfolio-video-title">Семейный фильм</h3></a><a class="link portfolio-video" href="#">
+            <h3 class="portfolio-video-title">Фильм о двоих</h3></a><a class="link portfolio-video" href="#">
+            <h3 class="portfolio-video-title">Детский сад</h3></a><a class="link portfolio-video" href="#">
+            <h3 class="portfolio-video-title">Дни рождения</h3></a></div><a class="link btn btn__blue order-video" href="#">Заказать семейное видео от орлавс</a>
       </div>
     </div>
     <div class="container-fluid">
-      <div class="row slideshow" id="slideshow">
-        <div class="slideshow-item col-xl-12"></div>
+      <div class="row slideshow" id="slideshow" style="display:none;">
+        <div class="slideshow-item">
+          <video controls="controls" loop="loop">
+            <source src="video/video1.mp4">
+          </video>
+        </div>
+        <div class="slideshow-item">
+          <video controls="controls" loop="loop">
+            <source src="video/video2.mp4">
+          </video>
+        </div>
+        <div class="slideshow-item">
+          <video controls="controls" loop="loop">
+            <source src="video/video2.mp4">
+          </video>
+        </div>
       </div>
     </div>
     <div class="container-fluid">
       <div class="row reviews" id="reviews">
-        <div class="reviews-item col-xl-12"><img class="reviews-img" src="img/reviews.png" alt="Семья фадеевых">
-          <div class="reviews-item-desc"><a class="link reviews-family" href="#">Фадеевых <span class="animate-text arrow-blue">история съёмок</span></a>
-            <p class="reviews-text">Орловы кайфуют в процессе, у них горят глаза и куча идей, поэтому в такой озитивной и дружеской обстановке рождаются большие шедевры маленьких семей, как наша:) весь съемочный процесс мы шутили и смеялись)пару дней назад мы сотворили второй наш проектик , фильм о нашем, недавно родившемся сыне)</p><a class="link reviews-all" href="#">Все отзывы <span class="animate-text arrow-green">о нас</span></a>
+        <div class="reviews-item col-xl-12">
+          <div class="row">
+            <div class="col-5 hidden-lg-down"><img class="reviews-img" src="img/reviews.jpg" alt="Семья фадеевых"></div>
+            <div class="col-12 col-xl-7 reviews-item-desc"><a class="link reviews-family" href="#">Фадеевых <span class="animate-text arrow-blue">история съёмок</span></a>
+              <p class="reviews-text">Орловы кайфуют в процессе, у них горят глаза и куча идей, поэтому в такой озитивной и дружеской обстановке рождаются большие шедевры маленьких семей, как наша:) весь съемочный процесс мы шутили и смеялись)пару дней назад мы сотворили второй наш проектик , фильм о нашем, недавно родившемся сыне)</p><a class="link reviews-all" href="#">Все отзывы <span class="animate-text arrow-green">о нас</span></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="container-fluid">
-      <div class="row news" id="reviews"><a class="link news-all arrow-white" href="#">Все новости</a>
-        <div class="news-item col-xl-12">
+      <div class="row news" id="reviews"><a class="link news-all arrow-white" href="#">Все новости</a><a class="link news-article" href="#">
           <div class="news-text">
-            <div class="news-title">Мы создаем наш сайт</div>
-            <div class="news-desc">1 декабря 2016 стартуем</div>
-          </div>
-        </div>
-      </div>
+            <h3 class="news-title">Мы создаем наш сайт</h3>
+            <p class="news-desc">1 декабря 2016 стартуем</p>
+          </div></a></div>
     </div>
     <div class="container-fluid">
       <div class="row footer" id="footer">
+        <ul class="bottom-menu bottom-menu-lists">
+          <li class="bottom-menu-item"><a class="link" href="#about">О нас</a></li>
+          <li class="bottom-menu-item"><a class="link" href="#portfolio">Новости</a></li>
+          <li class="bottom-menu-item"><a class="link" href="#reviews">Отзывы</a></li>
+          <li class="bottom-menu-item"><a class="link" href="#contacts">Контакты</a></li>
+        </ul>
         <div class="col-xl-12">
-          <ul class="bottom-menu bottom-menu-lists">
-            <li:a class="link bottom-menu-item" href="#about">О нас</li:a>
-            <li:a class="link bottom-menu-item" href="#portfolio">Портфолио</li:a>
-            <li:a class="link bottom-menu-item" href="#reviews">Отзыввы</li:a>
-            <li:a class="link bottom-menu-item" href="#contacts">Контакты</li:a>
-          </ul>
-        </div>
-        <div class="col-xl-12">
-          <div class="contacts-footer-order"><a class="link tel" href="tel:89323212509">8 (932) 321-25-09</a><a class="link call" href="#">Заказать звонок</a></div>
+          <div class="footer-contacts-slogan"><img class="logo-contacts" src="img/logo.svg" alt="Максим и Ксения Орловы"><span class="contacts-slogan">У каждого ребёнка должен быть фильм от орлавс</span></div>
+          <div class="footer-contacts-order"><a class="link tel" href="tel:89323212509">8 (932) 321-25-09</a><a class="link call" href="#">Заказать звонок</a></div>
         </div>
         <div class="col-xl-12">
           <ul class="social-btns social-btns__footer w-100">
-            <li:a class="link social-btn__inst" href="#"></li:a>
-            <li:a class="link social-btn__vk" href="#"></li:a>
-            <li:a class="link social-btn__fb" href="#"></li:a>
+            <li class="social-btn social-btn__inst"><a class="link" href="#" target="_blank"></a></li>
+            <li class="social-btn social-btn__vk"><a class="link" href="#" target="_blank"></a></li>
+            <li class="social-btn social-btn__fb"><a class="link" href="#" target="_blank"></a></li>
           </ul>
-          <div class="copyright w-100">&copy; 2016. Orloves.com. Семейное видео. Все права защищены.</div>
         </div>
+        <div class="copyright w-100">&copy; 2016. Orloves.com. Семейное видео. Все права защищены.</div>
       </div>
     </div>
   </body>

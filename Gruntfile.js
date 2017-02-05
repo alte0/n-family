@@ -94,7 +94,8 @@ module.exports = function(grunt) {
           cwd: 'template/',
           src: [
           "fonts/**/*.*",
-          "img/**"
+          "img/**",
+          "video/**"
           // ,
           // "js/**"
           // ,

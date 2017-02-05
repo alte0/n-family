@@ -1,21 +1,21 @@
 .container-fluid
 	#footer.row.footer
+		//- .col-xl-12
+		ul.bottom-menu.bottom-menu-lists
+			li.bottom-menu-item: a.link(href="#about") О нас
+			li.bottom-menu-item: a.link(href="#portfolio") Новости
+			li.bottom-menu-item: a.link(href="#reviews") Отзывы
+			li.bottom-menu-item: a.link(href="#contacts") Контакты
 		.col-xl-12
-			ul.bottom-menu.bottom-menu-lists
-				li:a.link.bottom-menu-item(href="#about") О нас
-				li:a.link.bottom-menu-item(href="#portfolio") Портфолио
-				li:a.link.bottom-menu-item(href="#reviews") Отзыввы
-				li:a.link.bottom-menu-item(href="#contacts") Контакты
-		.col-xl-12
-			//- .contacts-footer-slogan
-			//- 	img.logo-contacts(src="img/logo.svg" alt="Максим и Ксения Орловы")
-			//- 	span.contacts-slogan У каждого ребёнка должен быть фильм от орлавс
-			.contacts-footer-order
+			.footer-contacts-slogan
+				img.logo-contacts(src="img/logo.svg" alt="Максим и Ксения Орловы")
+				span.contacts-slogan У каждого ребёнка должен быть фильм от орлавс
+			.footer-contacts-order
 				a.link.tel(href="tel:89323212509") 8 (932) 321-25-09
 				a.link.call(href="#") Заказать звонок
 		.col-xl-12
 			ul.social-btns.social-btns__footer.w-100
-				li:a.link.social-btn__inst(href="#")
-				li:a.link.social-btn__vk(href="#")
-				li:a.link.social-btn__fb(href="#")
-			.copyright.w-100 &copy; 2016. Orloves.com. Семейное видео. Все права защищены.
+				li.social-btn.social-btn__inst: a.link(href="#" target="_blank")
+				li.social-btn.social-btn__vk: a.link(href="#" target="_blank")
+				li.social-btn.social-btn__fb: a.link(href="#" target="_blank")
+		.copyright.w-100 &copy; 2016. Orloves.com. Семейное видео. Все права защищены.

@@ -18,36 +18,46 @@ block contacts
 block content
 	.container-fluid
 		#portfolio.row.portfolio
-			.col-xl-12
-				.portfolio-title Наше портфолио
+			.portfolio-title Наше портфолио
+			.portfolio-video-wrap
 				a.link.portfolio-video(href="#")
-					.portfolio-video-title Фильм о двоих
+					h3.portfolio-video-title Семейный клип
 				a.link.portfolio-video(href="#")
-					.portfolio-video-title Семейный фильм
+					h3.portfolio-video-title Семейный фильм
 				a.link.portfolio-video(href="#")
-					.portfolio-video-title Семейный клип
+					h3.portfolio-video-title Фильм о двоих
 				a.link.portfolio-video(href="#")
-					.portfolio-video-title Детский сад
+					h3.portfolio-video-title Детский сад
 				a.link.portfolio-video(href="#")
-					.portfolio-video-title Дни рождения
-				a.link.btn.btn__blue.order-video(href="#") Заказать семейное видео от орлавс
+					h3.portfolio-video-title Дни рождения
+			a.link.btn.btn__blue.order-video(href="#") Заказать семейное видео от орлавс
 	.container-fluid
-		#slideshow.row.slideshow
-			.slideshow-item.col-xl-12
+		#slideshow.row.slideshow(style="display:none")
+				.slideshow-item
+					video(controls="controls" loop="loop")
+						source(src="video/video1.mp4")
+				.slideshow-item
+					video(controls="controls" loop="loop")
+						source(src="video/video2.mp4")
+				.slideshow-item
+					video(controls="controls" loop="loop")
+						source(src="video/video2.mp4")
 	.container-fluid
 		#reviews.row.reviews
 			.reviews-item.col-xl-12
-				img.reviews-img(src="img/reviews.png" alt="Семья фадеевых")
-				.reviews-item-desc
-					a.link.reviews-family(href="#") Фадеевых 
-						span.animate-text.arrow-blue история съёмок
-					p.reviews-text Орловы кайфуют в процессе, у них горят глаза и куча идей, поэтому в такой озитивной и дружеской обстановке рождаются большие шедевры маленьких семей, как наша:) весь съемочный процесс мы шутили и смеялись)пару дней назад мы сотворили второй наш проектик , фильм о нашем, недавно родившемся сыне)
-					a.link.reviews-all(href="#") Все отзывы 
-						span.animate-text.arrow-green о нас
+				.row
+					.col-5.hidden-lg-down
+						img.reviews-img(src="img/reviews.jpg" alt="Семья фадеевых")
+					.col-12.col-xl-7.reviews-item-desc
+						a.link.reviews-family(href="#") Фадеевых 
+							span.animate-text.arrow-blue история съёмок
+						p.reviews-text Орловы кайфуют в процессе, у них горят глаза и куча идей, поэтому в такой озитивной и дружеской обстановке рождаются большие шедевры маленьких семей, как наша:) весь съемочный процесс мы шутили и смеялись)пару дней назад мы сотворили второй наш проектик , фильм о нашем, недавно родившемся сыне)
+						a.link.reviews-all(href="#") Все отзывы 
+							span.animate-text.arrow-green о нас
 	.container-fluid
 		#reviews.row.news
 			a.link.news-all.arrow-white(href="#") Все новости
-			.news-item.col-xl-12
+			a.link.news-article(href="#")
 				.news-text
-					.news-title Мы создаем наш сайт
-					.news-desc 1 декабря 2016 стартуем
+					h3.news-title Мы создаем наш сайт
+					p.news-desc 1 декабря 2016 стартуем

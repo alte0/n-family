@@ -1,0 +1,118 @@
+.portfolio{
+	position: relative;
+	margin-top: -12px;
+	&-title {
+		display: none;
+		@media (min-width: 1915px) {
+			display: block;
+			@include text-uppercase;
+			font-weight: 900;
+			position: absolute;
+			top: 40px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			font-size: 75px;
+			line-height: 64.82px;
+			color: #2f64a1;
+			z-index: 1;
+			width: 500px;
+			text-align: center;
+			transform: rotate(-1deg);
+		}
+	}
+	&-video {
+		position: relative;
+		height: 205px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 0 50%;
+		width: 100%;
+		order:0;
+		@media (min-width: 1000px) {
+			height: 574px;
+		}
+		@media (min-width: 1915px) {
+			height: 895px;
+			opacity: 0.53;
+			&:hover {
+				opacity: 1;
+			}
+		}
+		&:nth-child(1) {
+			background-image: url(../img/portfolio3.jpg);
+			@media (min-width: 1915px) {
+				background-position: 65% 50%;
+			}
+		}
+		&:nth-child(2) {
+			background-image: url(../img/portfolio2.jpg);
+			@media (min-width: 1915px) {
+				background-position: 40% 50%;
+			}
+		}
+		&:nth-child(3) {
+			background-image: url(../img/portfolio1.jpg);
+			background-size: 130%;
+			background-position: 92% 50%;
+			@media (max-width: 1914px) {
+				order:-1;
+			}
+			@media (min-width: 1915px) {
+				background-size: cover;
+				background-position: 40% 50%;
+			}
+		}
+		&:nth-child(4) {
+			background-image: url(../img/portfolio4.jpg);
+			@media (min-width: 1915px) {
+				background-position: 55% 50%;
+			}
+		}
+		&:nth-child(5) {
+			background-image: url(../img/portfolio5.jpg);
+			@media (min-width: 1915px) {
+				background-position: 50% 50%;
+			}
+		}
+		&-wrap {
+			display: flex;
+			flex-direction: column;
+			flex-basis: 100%;
+			@media (min-width: 1915px) {
+				flex-direction: row;
+			}
+		}
+		&-title {
+			@include text-uppercase;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: 900;
+			color: white;
+			font-size: 29.17px;
+			line-height: 24.39px;
+			width: 180px;
+			position: relative;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			@media (min-width: 1000px) {
+				font-size: 79.17px;
+				line-height: 67.8px;
+				width: 500px;
+			}
+			@media (min-width: 1915px) {
+				color: #2f64a1;
+				font-size: 50px;
+				line-height: 43.21px;
+				width: auto;
+			}
+		}
+	}
+	& .order-video {
+		display: none;
+		@media (min-width: 1915px) {
+			display: block;
+		}
+	}
+}

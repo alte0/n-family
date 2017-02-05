@@ -1,0 +1,112 @@
+.footer {
+	justify-content: center;
+	text-align: center;
+	color: #2f64a1;
+	padding-top: 9px;
+	&-contacts {
+		&-slogan {
+			text-align: left;
+			display: flex;
+			justify-content: center;
+			padding-top: 10px;
+		}
+		&-order {
+			padding-top: 11px;
+		}
+	}
+	& .tel {
+		color: #7da642;
+		font-size: 20.83px;
+		line-height: 20.83px;
+		letter-spacing: -0.05em;
+		font-weight: bold;
+		padding-left: 0;
+		margin-bottom: 8px;
+	}
+	& .call {
+		color: white;
+		padding: 7px 10px 5px 10px;
+		border-radius: 5px;
+		@media (min-width: 1915px) {
+			font-size: 25px;
+			line-height: 66.67px;
+			padding: 13px 37px 15px 25px;
+			border-radius: 15px;
+		}
+	}
+	.logo-contacts {
+		width: 40px;
+		height: 38px;
+		margin-left: 59px;
+		@media (min-width: 1000px) {
+			width: 109px;
+			height: 106px;
+		}
+		@media (min-width: 1915px) {
+			width: 118px;
+			height: 113px;
+		}
+	}
+	.contacts-slogan {
+		color: black;
+		font-size: 12.5px;
+		line-height: 10px;
+		letter-spacing: -0.07em;
+		padding: 0;
+		margin-left: 4px;
+		width: 134px;
+		@media (min-width: 1000px) {
+			font-size: 25px;
+			line-height: 27.3px;
+			}
+		}
+	}
+.social-btns__footer {
+	padding-top: 19px;
+	display: block;
+	position: static;
+	& .social-btn__inst {
+		background-image: url(../img/inst-hover.svg);
+	}
+	& .social-btn__vk {
+		background-image: url(../img/vk-hover.svg);
+	}
+	& .social-btn__fb {
+		background-image: url(../img/fb-hover.svg);
+	}
+}
+.bottom {
+	&-menu {
+		@include no-style-ul;
+		@include text-uppercase;
+		font-weight: 900;
+		font-size: 0;
+		&-item {
+			display: inline-block;
+			font-size: 16.67px;
+			line-height: 16.67px;
+			letter-spacing: -0.07em;
+			margin-right: 9px;
+			&:last-child {
+				margin-right: 0px;
+			}
+			@media (min-width: 1000px) {
+				font-size: 45.83px;
+				line-height: 45.83px;
+				margin-right: 33px;
+			}
+			@media (min-width: 1915px) {
+				font-size: 50px;
+				line-height: 50px;
+			}
+			& .link {
+				color: #2f64a1;
+			}
+		}
+	}
+}
+.copyright {
+	padding-top: 10px;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
