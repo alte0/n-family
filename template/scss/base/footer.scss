@@ -3,7 +3,13 @@
 	text-align: center;
 	color: #2f64a1;
 	padding-top: 9px;
+	@media (min-width: 1915px) {
+		padding-top: 31px;
+	}
 	&-contacts {
+		@media (min-width: 1000px) {
+			padding-top: 23px;
+		}
 		&-slogan {
 			text-align: left;
 			display: flex;
@@ -11,7 +17,31 @@
 			padding-top: 10px;
 		}
 		&-order {
-			padding-top: 11px;
+			padding-top: 10px;
+			position: relative;
+			&:after {
+				content: "";
+				position: absolute;
+				margin: auto;
+				display: block;
+				@media (max-width: 999px) {
+					left: 0;
+					right: 0;
+					bottom: -8px;
+					width: 48px;
+					height: 1px;
+					background-color: #af9798;
+					border: 1px solid #e4e2e2;
+				}
+				@media (min-width: 1000px) {
+					left: 0;
+					top: 0;
+					bottom: 0;
+					width: 1px;
+					background-color: #b5a0a1;
+					box-shadow: 0 0 0 2px #b6a0a1, -2px 0px 0 2px #e2e0e0, 1px 0px 0 2px #d1cccc, 3px 0px 0 2px #e9e8e8;
+				}
+			}
 		}
 	}
 	& .tel {
@@ -22,16 +52,25 @@
 		font-weight: bold;
 		padding-left: 0;
 		margin-bottom: 8px;
+		@media (min-width: 1000px) {
+			font-size: 45.83px;
+			line-height: 45.83px;
+			letter-spacing: -0.05em;
+			margin-bottom: 2px;
+		}
+		@media (min-width: 1000px) {
+			margin-bottom: 10px;
+		}
 	}
 	& .call {
 		color: white;
 		padding: 7px 10px 5px 10px;
 		border-radius: 5px;
-		@media (min-width: 1915px) {
+		@media (min-width: 1000px) {
 			font-size: 25px;
-			line-height: 66.67px;
-			padding: 13px 37px 15px 25px;
-			border-radius: 15px;
+			line-height: 62.39px;
+			padding: 10px 37px 13px 25px;
+			border-radius: 12px;
 		}
 	}
 	.logo-contacts {
@@ -41,6 +80,8 @@
 		@media (min-width: 1000px) {
 			width: 109px;
 			height: 106px;
+			margin-left: 67px;
+			margin-left: 0px;
 		}
 		@media (min-width: 1915px) {
 			width: 118px;
@@ -56,15 +97,26 @@
 		margin-left: 4px;
 		width: 134px;
 		@media (min-width: 1000px) {
+			margin-left: 12px;
 			font-size: 25px;
 			line-height: 27.3px;
+			width: 230px;
 			}
+		@media (min-width: 1915px) {
+			line-height: 30px;
+		}
 		}
 	}
 .social-btns__footer {
 	padding-top: 19px;
 	display: block;
 	position: static;
+	@media (min-width: 1000px) {
+		padding-top: 32px;
+	}
+	@media (min-width: 1915px) {
+		padding-top: 33px;
+	}
 	& .social-btn__inst {
 		background-image: url(../img/inst-hover.svg);
 	}
@@ -90,6 +142,9 @@
 			&:last-child {
 				margin-right: 0px;
 			}
+			&:hover {
+				transform: rotate(10deg);
+			}
 			@media (min-width: 1000px) {
 				font-size: 45.83px;
 				line-height: 45.83px;
@@ -108,5 +163,11 @@
 .copyright {
 	padding-top: 10px;
 	font-weight: 300;
-	margin-bottom: 10px;
+	margin-bottom: 6px;
+	@media (min-width: 1000px) {
+		font-size: 29.17px;
+		line-height: 29.17px;
+		padding-top: 20px;
+		margin-bottom: 18px;
+	}
 }

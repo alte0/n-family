@@ -1,0 +1,12 @@
+.slideshow {
+	display: none;
+	height: 908px;
+	background-image: url(../img/bg-slideshow.jpg);
+	background-position: 0% 16%;
+	background-repeat: no-repeat;
+	border-radius: 0 0 100% 100%/0 0 110px 110px;
+	background-size: cover;
+	@media (min-width: 1915px) {
+		display: block;
+	}
+}

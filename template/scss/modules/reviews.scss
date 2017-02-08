@@ -1,46 +1,90 @@
 .reviews {
 	color: #2f64a1;
 	position: relative;
-	padding-top: 40px;
-	padding-bottom: 20px;
-	@media (min-width: 1915px) {
-		padding-top: 150px;
+	padding-top: 35px;
+	padding-bottom: 6px;
+	border-radius: 0 0 50% 50%/0 0 15px 15px;
+	box-shadow: 0px 0px 10px 4px black;
+	z-index: 1;
+	background-color: white;
+	@media (min-width: 1000px) {
+		padding-top: 70px;
+		border-radius: 0 0 100% 100%/0 0 40px 40px;
+		box-shadow: 0px 0px 17px 7px black;
 	}
+	@media (min-width: 1915px) {
+		padding-top: 80px;
+		padding-bottom: 85px;
+		border-radius: 0 0 100% 100%/0 0 150px 150px;
+		box-shadow: 0px 0px 35px 15px black;
+	}
+
 	&:before, &:after {
 		position: absolute;
 		content: "";
-		top: 0;
 		left: 0;
 		right: 0;
 		background-repeat: no-repeat;
 		margin: auto;
+		z-index: 1;
 	}
 	&:after {
-		width: 110px;
+		top: -12px;
+		width: 140px;
 		height: 35px;
 		@include text-uppercase;
 		background-image: url(../img/reviews-title.png);
 		background-size: contain;
 		@media (min-width: 1000px) {
-			width: 280px;
+			top: -50px;
+			width: 370px;
 			height: 90px;
 		}
 		@media (min-width: 1915px) {
-			width: 415px;
+			top: -35px;
+			width: 550px;
 			height: 135px;
 		}
 	}
 	&:before {
-		top: -30px;
+		top: -12px;
 		width: 100%;
-		height: 181px;
+		height: 40px;
 		background-image: url(../img/lines.png);
 		background-size: contain;
+		background-position: top center;
+		@media (min-width: 426px) {
+			height: 50px;
+		}
+		@media (min-width: 532px) {
+			height: 60px;
+			top: -22px;
+		}
+		@media (min-width: 639px) {
+			height: 70px;
+			top: -32px;
+		}
+		@media (min-width: 639px) {
+			height: 80px;
+			top: -42px;
+		}
+		@media (min-width: 862px) {
+			height: 85px;
+			top: -47px;
+		}
+		@media (min-width: 1000px) {
+			top: -55px;
+			height: 100px;
+		}
+		@media (min-width: 1915px) {
+			top: -70px;
+			height: 181px;
+		}
 	}
 	&-img {
-		display: none;
 		@media (min-width: 1915px) {
 			display: block;
+			margin-left: 40px;
 		}
 	}
 	&-item {
@@ -50,13 +94,28 @@
 		}
 		&-desc {
 			transform: rotate(-2deg) translateX(-1%);
+			@media (min-width: 1915px) {
+				padding-top: 93px;
+			}
 		}
 	}
 	&-family {
+		color: #2f64a1;
 		font-size: 16.67px;
 		line-height: 11.66px;
 		letter-spacing: -0.06em;
 		font-weight: bold;
+		position: relative;
+		&:before {
+			position: absolute;
+			content: "семья";
+			top: -8px;
+			left: 18px;
+			@media (min-width: 1000px) {	
+			top: -25px;
+			left: 50px;
+			}
+		}
 		@media (min-width: 1000px) {
 			font-size: 45.83px;
 			line-height: 32.41px;
@@ -69,10 +128,16 @@
 		}
 	}
 	&-text {
+		margin: 5px 20px 10px;
 		@media (min-width: 1000px) {
 			font-size: 37.5px;
 			line-height: 37.5px;
 			letter-spacing: -0.06em;
+			margin: 5px 20px 129px;
+		}
+		@media (min-width: 1915px) {
+			margin: 20px 0px 51px 0px;
+			line-height: 40px;
 		}
 	}
 	&-all {
@@ -82,10 +147,13 @@
 		font-weight: 900;
 		line-height: 16.92px;
 		letter-spacing: -0.06em;
+		display: inline-block;
+		position: relative;
 		@media (min-width: 1000px) {
 			font-size: 41.67px;
 			line-height: 28.08px;
 			letter-spacing: -0.06em;
+			margin-bottom: 18px;
 		}
 		@media (min-width: 1915px) {
 			font-size: 50px;
@@ -94,6 +162,24 @@
 		}
 	}
 }
-
-
-
+.arrow{
+	&-blue:after, &-green:after {
+		position: absolute;
+		content: "";
+		right: -30px;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		background-repeat: no-repeat;
+	}
+	&-blue:after {
+		background-image: url(../img/arrow-blue.png);
+		width: 17px;
+		height: 28px;
+	}
+	&-green:after {
+		background-image: url(../img/arrow-green.png);
+		width: 16px;
+		height: 30px;
+	}
+}

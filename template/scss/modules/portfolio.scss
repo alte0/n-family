@@ -1,6 +1,9 @@
 .portfolio{
 	position: relative;
-	margin-top: -12px;
+	margin-top: -14px;
+	@media (min-width: 1000px) {
+		margin-top: -47px;
+	}
 	&-title {
 		display: none;
 		@media (min-width: 1915px) {
@@ -8,17 +11,18 @@
 			@include text-uppercase;
 			font-weight: 900;
 			position: absolute;
-			top: 40px;
+			top: 74px;
 			left: 0;
 			right: 0;
 			margin: auto;
 			font-size: 75px;
 			line-height: 64.82px;
+			letter-spacing: -0.06em;
 			color: #2f64a1;
 			z-index: 1;
 			width: 500px;
 			text-align: center;
-			transform: rotate(-1deg);
+			transform: rotate(-2deg);
 		}
 	}
 	&-video {
@@ -28,21 +32,23 @@
 		background-size: cover;
 		background-position: 0 50%;
 		width: 100%;
-		order:0;
 		@media (min-width: 1000px) {
 			height: 574px;
 		}
 		@media (min-width: 1915px) {
-			height: 895px;
+			height: 904px;
 			opacity: 0.53;
 			&:hover {
 				opacity: 1;
 			}
 		}
 		&:nth-child(1) {
-			background-image: url(../img/portfolio3.jpg);
+			background-image: url(../img/portfolio1.jpg);
+			background-size: 130%;
+			background-position: 92% 50%;
 			@media (min-width: 1915px) {
-				background-position: 65% 50%;
+				background-size: cover;
+				background-position: 40% 50%;
 			}
 		}
 		&:nth-child(2) {
@@ -52,15 +58,9 @@
 			}
 		}
 		&:nth-child(3) {
-			background-image: url(../img/portfolio1.jpg);
-			background-size: 130%;
-			background-position: 92% 50%;
-			@media (max-width: 1914px) {
-				order:-1;
-			}
+			background-image: url(../img/portfolio3.jpg);
 			@media (min-width: 1915px) {
-				background-size: cover;
-				background-position: 40% 50%;
+				background-position: 65% 50%;
 			}
 		}
 		&:nth-child(4) {
@@ -86,7 +86,6 @@
 		&-title {
 			@include text-uppercase;
 			text-align: center;
-			text-transform: uppercase;
 			font-weight: 900;
 			color: white;
 			font-size: 29.17px;
@@ -94,7 +93,8 @@
 			width: 180px;
 			position: relative;
 			left: 50%;
-			top: 50%;
+			top: 55%;
+			margin: 0;
 			transform: translate(-50%, -50%);
 			@media (min-width: 1000px) {
 				font-size: 79.17px;
@@ -113,6 +113,10 @@
 		display: none;
 		@media (min-width: 1915px) {
 			display: block;
+			bottom: 25px;
+			padding: 12px;
+			letter-spacing: -0.13em;
+			max-width: 485px;
 		}
 	}
 }

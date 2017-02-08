@@ -1,7 +1,9 @@
+@import "base/var";
 // import Bootstrap 4 Grid System (Flex) Version Currently v4.0.0-alpha.6
 // https://github.com/m-spyratos/bootstrap-4-grid 
-@import "base/var";
 @import "../../bower_components/bootstrap-4-grid/scss/grid";
+// import animate.css
+@import "../../bower_components/animate.css/animate";
 // base
 @import "base/global";
 @import "base/mixin";

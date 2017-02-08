@@ -1,78 +1,90 @@
 (function($, undefined) {
 	$(function() {
 
-		// // maps
-		// var $closeStaticMap = $('.discuss__map');
-		// var $openJsMap = $('.discuss__map_js');
+		//открытие меню
+		var header = $('#header');
+		var navigation = header.find('.main-navigation');
+		var panelMenu = header.find('.panel-menu');
+		var panelMenuItem = header.find('.panel-menu-item');
+		var menu  = header.find('.main-menu');
+		var clickPanelMenu = panelMenu.find('.link').click(function(event) {
+			/* Act on the event */
+			navigation.toggleClass('main-navigation__open-js');
+			panelMenu.toggleClass('panel-menu__open-js');
+			panelMenuItem.toggleClass('panel-menu-item__open-js');
+			menu.toggleClass('main-menu__open-js');
+			return false;
+		});
 
-		// $closeStaticMap.addClass('discuss__map_jsInvisibleMap');
-		// $openJsMap.addClass('discuss__map_jsShowMap');
 
+		var desktop = '1000';
+		function widthSreen(widthWindow) {
+			if (widthWindow >= desktop) {
+				// console.log(widthWindow);
+				console.log(desktop);
+			}
+		}
 
-		// //message error form
-		// var modalWindow = $('<div>', {
-		// 	class: 'modalWindow'
+		$(window).resize(function() {
+	    var widthWindow = $(window).width();
+	    widthSreen(widthWindow);
+		});
+
+		// var $reviews = $('#reviews');
+		// var $animateText = $reviews.find('.animate-text').textillate({
+		//   // the default selector to use when detecting multiple texts to animate
+		//   selector: '.texts',
+		//   // enable looping
+		//   loop: true,
+		//   // sets the minimum display time for each text before it is replaced
+		//   minDisplayTime: 1000,
+		//   // sets the initial delay before starting the animation
+		//   // (note that depending on the in effect you may need to manually apply
+		//   // visibility: hidden to the element before running this plugin)
+		//   initialDelay: 0,
+		//   // set whether or not to automatically start animating
+		//   autoStart: false,
+		//   // in animation settings
+		//   in: {
+		//     // set the effect name
+		//     effect: 'fadeIn',
+		//     // set the delay factor applied to each consecutive character
+		//     delayScale: 1.5,
+		//     // set the delay between each character
+		//     delay: 100,
+		//     // set to true to animate all the characters at the same time
+		//     sync: false,
+		//     // randomize the character sequence
+		//     // (note that shuffle doesn't make sense with sync = true)
+		//     shuffle: false,
+		//     // reverse the character sequence
+		//     // (note that reverse doesn't make sense with sync = true)
+		//     reverse: false
+		//   },
+		//   // out animation settings.
+		//   out: {
+		//     effect: 'fadeOut',
+		//     delayScale: 0.1,
+		//     delay: 50,
+		//     sync: false,
+		//     shuffle: false,
+		//     reverse: true,
+		//     callback: function () {}
+		//   },
+
+		//   // callback that executes once textillate has finished
+		//   callback: function () {},
+
+		// });;
+
+		// $reviews.find('.reviews-family, .reviews-all').hover(function() {
+		// 	/* Stuff to do when the mouse enters the element */
+		//   $animateText.textillate('start');
+		// }, function() {
+		// 	/* Stuff to do when the mouse leaves the element */
+		// 	$animateText.textillate('stop');
 		// });
-		// modalWindow.appendTo($('body'));
-
-		// //кнопка закрытия формы
-		// var buttonClose = $('<button>', {
-		// 	class: 'buttonClose',
-		// 	type: 'button',
-		// 	text: 'Ok'
-		// });
-		// buttonClose.appendTo(messageBadForm);
-
-		// // проверка формы
-		// $('form.discuss__message').submit(function() {
-		// 	if (
-		// 		$(this).find('input[name=name]').val() === '' ||
-		// 		$(this).find('input[name=email]').val() === '' ||
-		// 		$(this).find('textarea[name=message]').val() === '' ) {
-		// 			modalWindow.fadeIn(300);
-		// 			return false;
-		// 		}
-		// 	});
-
-		// 	// button close error form
-		// 	buttonClose.on('click', function() {
-		// 		modalWindow.fadeOut(500);
-		// 	});
-
-		// 	//button up
-		// 	var buttonUp = $('<button>', {
-		// 		type: 'button',
-		// 		class: 'buttonUp',
-		// 		text: 'UP'
-		// 	});
-		// 	buttonUp.appendTo($('body'));
-		// 	var buttonUpBreakpont = 300;
-		// 	var activateButtonUp = 'buttonUp_active';
-		// 	$(window).on('scroll load', function(event) {
-		// 		event.preventDefault();
-		// 		if ( $(this).scrollTop()>buttonUpBreakpont ) {
-		// 			// buttonUp.addClass(activateButtonUp);
-		// 			buttonUp.fadeIn(300);
-		// 		} else {
-		// 			// buttonUp.removeClass(activateButtonUp);
-		// 			buttonUp.fadeOut(300);
-		// 		}
-		// 	});
-		// 	buttonUp.on('click', function(event) {
-		// 		$('html, body').animate({
-		// 			scrollTop: 0
-		// 		}, 500);
-		// 	});
-
-		// 	//animate menu to id
-		// 	$('.main-menu__item').on('click', 'a', function(event) {
-		// 		event.preventDefault();
-		// 		var elementId = $(this).attr('href');
-		// 		var elementPositionTop = $(elementId).offset().top;
-		// 		$('html, body').animate({
-		// 			scrollTop: elementPositionTop
-		// 		}, 1000);
-		// 	});
+		
 
 			//slick
 			$('.header-slider').slick({
