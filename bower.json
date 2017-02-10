@@ -18,6 +18,8 @@
     "jquery": "^3.1.1",
     "slick-carousel": "^1.6.0",
     "bootstrap-4-grid": "^1.0.2",
-    "textillate": "^0.4.0"
+    "textillate": "^0.4.0",
+    "jquery-modal": "^0.8.0",
+    "bootstrap-datepicker": "^1.6.4"
   }
 }

@@ -4,6 +4,10 @@
 @import "../../bower_components/bootstrap-4-grid/scss/grid";
 // import animate.css
 @import "../../bower_components/animate.css/animate";
+// import jquery-modal
+@import "../../bower_components/jquery-modal/jquery.modal";
+// import bootstrap-datepicker.css
+@import "../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker";
 // base
 @import "base/global";
 @import "base/mixin";
@@ -16,5 +20,6 @@
 @import "modules/portfolio";
 @import "modules/reviews";
 @import "modules/slideshow";
+@import "modules/order-form";
 // pages
 // @import "";

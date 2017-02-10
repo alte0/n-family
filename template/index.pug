@@ -13,7 +13,7 @@ block contacts
 				.row.justify-content-center.contacts-footer
 						a.link.call(href="#") Заказать звонок
 						span.contacts-slogan У каждого ребёнка должен быть фильм от орлавс
-			a.link.contacts-close(href="#")
+			a.link#contacts-close(href="#")
 
 block content
 	.container-fluid
@@ -30,7 +30,7 @@ block content
 					h3.portfolio-video-title Детский сад
 				a.link.portfolio-video(href="#")
 					h3.portfolio-video-title Дни рождения
-			a.link.btn.btn__blue.order-video(href="#") Заказать семейное видео от орлавс
+			a.link.btn.btn__blue.order-video(href="#order-form" rel="modal:open") Заказать семейное видео от орлавс
 	.container-fluid
 		#slideshow.row.slideshow
 				.slideshow-item(style="display:none")
@@ -50,10 +50,11 @@ block content
 						img.reviews-img(src="img/reviews.jpg" alt="Семья фадеевых")
 					.col-12.col-xl-5.reviews-item-desc
 						a.link.reviews-family(href="#") Фадеевых 
+							//- span.animate-text история съёмок
 							span.animate-text.arrow-blue история съёмок
 						p.reviews-text Орловы кайфуют в процессе, у них горят глаза и куча идей, поэтому в такой озитивной и дружеской обстановке рождаются большие шедевры маленьких семей, как наша:) весь съемочный процесс мы шутили и смеялись)пару дней назад мы сотворили второй наш проектик , фильм о нашем, недавно родившемся сыне)
-						a.link.reviews-all(href="#") Все отзывы 
-							span.animate-text.arrow-green о нас
+						a.link.reviews-all(href="#").arrow-green Все отзывы 
+							span.animate-text о нас
 	.container-fluid
 		#reviews.row.news
 			a.link.news-all.arrow-white(href="#") Все новости
@@ -61,3 +62,15 @@ block content
 				.news-text
 					h3.news-title Мы создаем наш сайт
 					p.news-desc 1 декабря 2016 стартуем
+	form#order-form.order-form(action='' style='display:none;')
+		.order-form__header
+			.column-left 2016
+			.column-right
+				.day-week понедельник
+				.day-month 24 октября
+		.order-form__desc выбирите удобное время 
+		#datepicker
+		.order-form__footer
+			input(type="text" name="name" placeholder="имя")
+			input(type="text" name="tel" placeholder="телефон")
+			input(type="submit" value="отправить заявку")

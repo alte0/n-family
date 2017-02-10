@@ -55,7 +55,22 @@
 		}
 	}
 }
-
+#contacts-close {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 86px;
+	height: 85px;
+	bottom: 49px;
+	margin: auto;
+	&:after {
+		position: absolute;
+		content: "";
+		background: url(../img/btn-close-contacts.svg);
+		width: 86px;
+		height: 85px;
+	}
+}
 .tel, .email {
 	color: white;
 	display: block;

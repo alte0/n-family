@@ -1,0 +1,61 @@
+.order-form {
+	max-width: 610px;
+	border-radius: 32px;
+	padding: 20px 20px 35px 30px;
+	color: #2F64A1;
+	&__header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.column-left {
+		font-size: 60px;
+		font-weight: 600;
+		letter-spacing: -0.05em;
+	}
+	.column-right {
+		font-size: 35px;
+		letter-spacing: -0.13em;
+		text-align: right;
+	}
+	.day-month {
+		font-size: 30px;
+		line-height: 20px;
+		letter-spacing: -0.08em;
+	}
+	&__desc {
+		text-align: center;
+		font-size: 30px;
+		padding-top: 17px;
+		letter-spacing: -0.07em;
+		@include text-uppercase;
+	}
+	&__footer {
+		padding: 0 120px;
+		text-align: center;
+	}
+	input {
+		width: 100%;
+		display: inline-block;
+		border-radius: 10px;
+		border: 1px solid #2F64A1;
+		padding: 10px;
+		margin-bottom: 10px;
+		outline: none;
+		&[type="submit"] {
+			width: 140px;
+			background-color: #2F64A1;
+			color: white;
+		}
+	}
+}
+.datepicker-inline, .table-condensed {
+	width: 100%;
+}
+.table-condensed {
+	font-size: 30px;
+	padding-top: 12px;
+}
+.datepicker-switch {
+	@include text-uppercase;
+}

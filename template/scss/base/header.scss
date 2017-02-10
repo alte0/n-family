@@ -177,11 +177,6 @@
 			letter-spacing: -0.05em;
 			font-weight: 900;
 			@include text-uppercase;
-			&:hover {
-				color: green;
-				transform: rotate(10deg);
-				display: inline-block;
-			}
 			@media (min-width: 1000px) {
 				font-size: 66.67px;
 				line-height: 115px;
@@ -226,6 +221,11 @@
 			}
 		}
 }
+.main-menu-item:hover {
+	color: green;
+	transform: rotate(10deg);
+	display: inline-block;
+}
 @media (min-width: 1915px) {
 	.social-btns {
 		display: block;
@@ -233,8 +233,6 @@
 	.main {
 		&-menu {
 			padding: 188px 44px;
-		}
-		&-navigation {
 			position: absolute;
 			right: 0;
 			top: -27px;
@@ -244,6 +242,8 @@
 			&__open-js {
 				display: block;
 			}
+		}
+		&-navigation {
 		}
 		&-menu-item {
 			color: white;
