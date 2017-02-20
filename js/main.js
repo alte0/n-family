@@ -15825,22 +15825,80 @@ return jQuery;
 			return false;
 		});
 
-		//перехватываем нажатие на контакты на десктопе, что бы открыть выпадающие инфо контактов
-		var desktop = '1915', itemLinkContact = $('#contact'), panelContact = $('#contacts');
+		//перехватываем нажатие на контакты на десктопе, что бы открыть выпадающие инфо контактов и инициальзация сладеров
+		var desktop = '1001',
+				itemLinkContact = $('#contact'),
+				panelContact = $('#contacts');
+
+		var sliderVideo = $('#slideshow'),
+				// sliderReviews = $('.reviews-slider'),
+				sliderReviews = $('#reviews'),
+				sliderReviewsClone = sliderReviews.find('.reviews-item');
+				sliderNews = $('.news-article-slider');
+				sliderNewsClone = sliderNews.find('.news-article');
+
 		function widthSreen(widthWindow) {
 			if (widthWindow >= desktop) {
-				console.log(widthWindow);
-				console.log(desktop);
-				itemLinkContact.on('click', function(event) {
-					// event.preventDefault();
-					panelContact.css('display', 'block');
-					$(window).scrollTop(0);
-					return false;
-					/* Act on the event */
-				});
+				// console.log(widthWindow);
+				console.log('больше' + desktop);
+					itemLinkContact.on('click', function(event) {
+						// event.preventDefault();
+						panelContact.css('display', 'block');
+						$(window).scrollTop(0);
+						return false;
+						/* Act on the event */
+					});
+					sliderVideo.slick({
+						dots: true,
+					  infinite: true,
+					  speed: 1000,
+					  slidesToShow: 1,
+					  // adaptiveHeight: true,
+						slidesToScroll: 1,
+					  autoplay: true,
+					  autoplaySpeed: 5000,
+						arrows: false
+		      });
+					sliderReviewsClone.clone().appendTo(sliderReviews);
+					sliderReviews.slick({
+						dots: true,
+					  infinite: true,
+					  speed: 1000,
+					  slidesToShow: 1,
+					  // adaptiveHeight: true,
+						slidesToScroll: 1,
+					  autoplay: true,
+					  autoplaySpeed: 3000,
+						arrows: false
+		      });
+					sliderNewsClone.clone().appendTo(sliderNews);
+					sliderNews.slick({
+						dots: true,
+					  infinite: true,
+					  speed: 1000,
+					  slidesToShow: 1,
+					  // adaptiveHeight: true,
+						slidesToScroll: 1,
+					  autoplay: true,
+					  autoplaySpeed: 2500,
+						arrows: false
+		      });
+			} else {
+				console.log('меньше ' + desktop);
+				if ( sliderVideo.hasClass('slick-initialized') ) {
+					sliderVideo.slick('unslick');
+				}
+				if ( sliderReviews.hasClass('slick-initialized') ) {
+					sliderReviews.slick('unslick');
+					sliderReviews.find('.reviews-item:nth-child(2)').remove();
+				}
+				if ( sliderNews.hasClass('slick-initialized') ) {
+					sliderNews.slick('unslick');
+					sliderNews.find('.news-article:nth-child(2)').remove();
+				}
 			}
-		}
-		// узнаем ширину для перехвата
+		};
+		// узнаем ширину window
 		var widthWindow = $(window).width();
 		$(window).ready(widthSreen(widthWindow)).resize(function() {
 	    var widthWindow = $(this).width();
@@ -15900,9 +15958,12 @@ return jQuery;
 		  // callback that executes once textillate has finished
 		  callback: function () {},
 
+		  // set the type of token to animate (available types: 'char' and 'word')
+  		type: 'char'
+
 		});;
 
-		  $animateText.textillate('start');
+		  // $animateText.textillate('start');
 		// $reviews.find('.reviews-family, .reviews-all').hover(function() {
 		// 	/* Stuff to do when the mouse enters the element */
 		//   $animateText.textillate('start');
@@ -15925,29 +15986,30 @@ return jQuery;
             switch (date.getDate()){
               case 4:
                 return {
-                  tooltip: 'Example tooltip',
-                  classes: 'active'
+                  tooltip: 'Свободное время 9:00-12:00 12:00-15:00',
+                  classes: 'free-time'
                 };
               case 8:
                 return false;
               case 12:
-                return "green";
+                return "free-day";
           }
         }
     });
-			//slick
-			$('.header-slider').slick({
-				dots: true,
-			  infinite: true,
-			  speed: 1000,
-			  slidesToShow: 1,
-			  adaptiveHeight: true,
-				slidesToScroll: 1,
-			  autoplay: true,
-			  autoplaySpeed: 2500,
-				arrows: false
-      });
 
+      // 
+      var btnPlay = $('.video-control-group-item__pause-play');
+      btnPlay.click(function(event) {
+      	/* Act on the event */
+      	btnPlay.find('.link').toggleClass('on-play-js');
+      	return false;
+      });
+      var btnSound = $('.video-control-group-item__sound');
+      btnSound.click(function(event) {
+      	/* Act on the event */
+      	btnSound.find('.link').toggleClass('on-sound-js');
+      	return false;
+      });
 			
 
 	});

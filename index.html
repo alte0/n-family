@@ -49,7 +49,9 @@
                 <source media="(min-width:1000px)" srcset="img/logo-header-tablet.png"><img class="header-logo" src="img/logo-header-mobile.png" alt="Максим и Ксения Орловы">
               </picture>
             </div>
-            <div class="w-100"><span class="header-slogan">Мы снимаем жизнь		</span></div>
+            <div class="w-100">
+              <p class="header-slogan">Мы снимаем<br> жизнь		</p>
+            </div>
             <div class="w-100">
               <ul class="video-control-group">
                 <li class="video-control-group-item video-control-group-item__pause-play"><a class="link" href="#"></a></li>
@@ -64,50 +66,53 @@
       <div class="row portfolio" id="portfolio">
         <div class="portfolio-title">Наше портфолио</div>
         <div class="portfolio-video-wrap"><a class="link portfolio-video" href="#">
-            <h3 class="portfolio-video-title">Семейный клип</h3></a><a class="link portfolio-video" href="#">
-            <h3 class="portfolio-video-title">Семейный фильм</h3></a><a class="link portfolio-video" href="#">
-            <h3 class="portfolio-video-title">Фильм о двоих</h3></a><a class="link portfolio-video" href="#">
-            <h3 class="portfolio-video-title">Детский сад</h3></a><a class="link portfolio-video" href="#">
-            <h3 class="portfolio-video-title">Дни рождения</h3></a></div><a class="link btn btn__blue order-video" href="#order-form" rel="modal:open">Заказать семейное видео от орлавс</a>
+            <p class="portfolio-video-title">Семейный<br> клип</p></a><a class="link portfolio-video" href="#">
+            <p class="portfolio-video-title">Семейный<br> фильм</p></a><a class="link portfolio-video" href="#">
+            <p class="portfolio-video-title">Фильм<br> о двоих</p></a><a class="link portfolio-video" href="#">
+            <p class="portfolio-video-title">Детский<br> сад</p></a><a class="link portfolio-video" href="#">
+            <p class="portfolio-video-title">Дни<br> рождения</p></a></div><a class="link btn btn__blue order-video" href="#order-form" rel="modal:open">Заказать семейное видео от орлавс</a>
       </div>
     </div>
     <div class="container-fluid">
       <div class="row slideshow" id="slideshow">
-        <div class="slideshow-item" style="display:none;">
+        <div class="slideshow-item">
           <video controls="controls" loop="loop">
             <source src="video/video1.mp4">
           </video>
         </div>
-        <div class="slideshow-item" style="display:none;">
+        <div class="slideshow-item">
           <video controls="controls" loop="loop">
             <source src="video/video2.mp4">
           </video>
         </div>
-        <div class="slideshow-item" style="display:none;">
+        <div class="slideshow-item">
           <video controls="controls" loop="loop">
-            <source src="video/video2.mp4">
+            <source src="video/video3.mp4">
           </video>
         </div>
       </div>
     </div>
     <div class="container-fluid">
-      <div class="row reviews" id="reviews">
+      <div class="row reviews reviews-slider" id="reviews">
         <div class="reviews-item col-xl-12">
           <div class="row">
-            <div class="col-5 hidden-lg-down"><img class="reviews-img" src="img/reviews.jpg" alt="Семья фадеевых"></div>
-            <div class="col-12 col-xl-5 reviews-item-desc"><a class="link reviews-family" href="#">Фадеевых <span class="animate-text arrow-blue">история съёмок</span></a>
-              <p class="reviews-text">Орловы кайфуют в процессе, у них горят глаза и куча идей, поэтому в такой озитивной и дружеской обстановке рождаются большие шедевры маленьких семей, как наша:) весь съемочный процесс мы шутили и смеялись)пару дней назад мы сотворили второй наш проектик , фильм о нашем, недавно родившемся сыне)</p><a class="link reviews-all arrow-green" href="#">Все отзывы <span class="animate-text">о нас</span></a>
+            <div class="col-lg-5 col-xl-5 hidden-md-down"><img class="reviews-img" src="img/reviews.jpg" alt="Семья фадеевых"></div>
+            <div class="col-12 col-lg-7 col-xl-6 reviews-item-desc"><a class="link reviews-family" href="#">Фадеевых <span class="animate-text"></span></a>
+              <p class="reviews-text">Орловы кайфуют в процессе, у них горят глаза и куча идей, поэтому в такой озитивной и дружеской обстановке рождаются большие шедевры маленьких семей, как наша:) весь съемочный процесс мы шутили и смеялись)пару дней назад мы сотворили второй наш проектик , фильм о нашем, недавно родившемся сыне)</p><a class="link reviews-all arrow-green" href="#">Все отзывы </a>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="container-fluid">
-      <div class="row news" id="reviews"><a class="link news-all arrow-white" href="#">Все новости</a><a class="link news-article" href="#">
-          <div class="news-text">
-            <h3 class="news-title">Мы создаем наш сайт</h3>
-            <p class="news-desc">1 декабря 2016 стартуем</p>
-          </div></a></div>
+      <div class="row news" id="news">
+        <div class="news-all-wrap"><a class="link news-all arrow-white" href="#">Все новости</a></div>
+        <div class="news-article-slider"><a class="link news-article" href="#">
+            <div class="news-text">
+              <h3 class="news-title">Мы создаем наш сайт</h3>
+              <p class="news-desc">1 декабря 2016 стартуем</p>
+            </div></a></div>
+      </div>
     </div>
     <form class="order-form" id="order-form" action="" style="display:none;">
       <div class="order-form__header">
@@ -122,6 +127,9 @@
       <div class="order-form__footer">
         <input type="text" name="name" placeholder="имя">
         <input type="text" name="tel" placeholder="телефон">
+        <input type="datetime" name="dateandtime" placeholder="дата и время">
+        <input type="text" name="typevideo" placeholder="тип видео">
+        <textarea></textarea>
         <input type="submit" value="отправить заявку">
       </div>
     </form>
@@ -135,12 +143,12 @@
         </ul>
         <div class="col-12">
           <div class="row footer-contacts">
-            <div class="footer-contacts-slogan col-12 col-lg-5 col-xl-3 offset-lg-1 offset-xl-3"><img class="logo-contacts" src="img/logo.svg" alt="Максим и Ксения Орловы"><span class="contacts-slogan">У каждого ребёнка должен быть фильм от орлавс</span></div>
-            <div class="footer-contacts-order col-12 col-lg-5 col-xl-3"><a class="link tel" href="tel:89323212509">8 (932) 321-25-09</a><a class="link call" href="#">Заказать звонок</a></div>
+            <div class="footer-contacts-slogan col-12 col-sm-12 col-md-6 col-xl-3 offset-xl-4"><img class="logo-contacts" src="img/logo.svg" alt="Максим и Ксения Орловы"><span class="contacts-slogan">У каждого ребёнка должен быть фильм от орлавс</span></div>
+            <div class="footer-contacts-order col-12 col-sm-12 col-md-6 col-xl-3"><a class="link tel" href="tel:89323212509">8 (932) 321-25-09</a><a class="link call" href="#">Заказать звонок</a></div>
           </div>
         </div>
         <div class="col-12">
-          <ul class="social-btns social-btns__footer w-100">
+          <ul class="social-btns social-btns__footer">
             <li class="social-btn social-btn__inst"><a class="link" href="#" target="_blank"></a></li>
             <li class="social-btn social-btn__vk"><a class="link" href="#" target="_blank"></a></li>
             <li class="social-btn social-btn__fb"><a class="link" href="#" target="_blank"></a></li>
