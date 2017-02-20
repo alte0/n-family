@@ -96,11 +96,11 @@
 	letter-spacing: -0.07em;
 	line-height: 31.45px;
 	background-color: #6fb92f;
-	@media (min-width: 1000px) {
+	@media (min-width: 361px) and (max-width: 1000px) {
 		font-size: 25px;
 		line-height: 62.39px;
 	}
-	@media (min-width: 1915px) {
+	@media (min-width: 1001px) {
 		font-size: 29.17px;
 		line-height: 29.17px;
 		padding: 15px 37px 17px 25px;

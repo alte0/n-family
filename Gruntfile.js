@@ -76,7 +76,7 @@ module.exports = function(grunt) {
         tasks: ["pug"]
       },
       img: {
-        files: ["template/img/**/*.*"],
+        files: ["template/img/*.*"],
         tasks: ["copy", "imagemin"]
       },
       rigger: {
@@ -188,7 +188,8 @@ module.exports = function(grunt) {
       "imagemin",
       "pug",
       "rigger",
-      "uglify"
+      "uglify",
+      "sprite"
       ]);
 
 };

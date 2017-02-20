@@ -21,47 +21,48 @@ block content
 			.portfolio-title Наше портфолио
 			.portfolio-video-wrap
 				a.link.portfolio-video(href="#")
-					h3.portfolio-video-title Семейный клип
+					p.portfolio-video-title Семейный<br> клип
 				a.link.portfolio-video(href="#")
-					h3.portfolio-video-title Семейный фильм
+					p.portfolio-video-title Семейный<br> фильм
 				a.link.portfolio-video(href="#")
-					h3.portfolio-video-title Фильм о двоих
+					p.portfolio-video-title Фильм<br> о двоих
 				a.link.portfolio-video(href="#")
-					h3.portfolio-video-title Детский сад
+					p.portfolio-video-title Детский<br> сад
 				a.link.portfolio-video(href="#")
-					h3.portfolio-video-title Дни рождения
+					p.portfolio-video-title Дни<br> рождения
 			a.link.btn.btn__blue.order-video(href="#order-form" rel="modal:open") Заказать семейное видео от орлавс
 	.container-fluid
 		#slideshow.row.slideshow
-				.slideshow-item(style="display:none")
+				.slideshow-item
 					video(controls="controls" loop="loop")
 						source(src="video/video1.mp4")
-				.slideshow-item(style="display:none")
+				.slideshow-item
 					video(controls="controls" loop="loop")
 						source(src="video/video2.mp4")
-				.slideshow-item(style="display:none")
+				.slideshow-item
 					video(controls="controls" loop="loop")
-						source(src="video/video2.mp4")
+						source(src="video/video3.mp4")
 	.container-fluid
-		#reviews.row.reviews
+		#reviews.row.reviews.reviews-slider
 			.reviews-item.col-xl-12
 				.row
-					.col-5.hidden-lg-down
+					.col-lg-5.col-xl-5.hidden-md-down
 						img.reviews-img(src="img/reviews.jpg" alt="Семья фадеевых")
-					.col-12.col-xl-5.reviews-item-desc
+					.col-12.col-lg-7.col-xl-6.reviews-item-desc
 						a.link.reviews-family(href="#") Фадеевых 
-							//- span.animate-text история съёмок
-							span.animate-text.arrow-blue история съёмок
+							span.animate-text
+								//- .arrow-blue история съёмок
 						p.reviews-text Орловы кайфуют в процессе, у них горят глаза и куча идей, поэтому в такой озитивной и дружеской обстановке рождаются большие шедевры маленьких семей, как наша:) весь съемочный процесс мы шутили и смеялись)пару дней назад мы сотворили второй наш проектик , фильм о нашем, недавно родившемся сыне)
 						a.link.reviews-all(href="#").arrow-green Все отзывы 
-							span.animate-text о нас
 	.container-fluid
-		#reviews.row.news
-			a.link.news-all.arrow-white(href="#") Все новости
-			a.link.news-article(href="#")
-				.news-text
-					h3.news-title Мы создаем наш сайт
-					p.news-desc 1 декабря 2016 стартуем
+		#news.row.news
+			.news-all-wrap
+				a.link.news-all.arrow-white(href="#") Все новости
+			.news-article-slider
+				a.link.news-article(href="#")
+					.news-text
+						h3.news-title Мы создаем наш сайт
+						p.news-desc 1 декабря 2016 стартуем
 	form#order-form.order-form(action='' style='display:none;')
 		.order-form__header
 			.column-left 2016
@@ -73,4 +74,7 @@ block content
 		.order-form__footer
 			input(type="text" name="name" placeholder="имя")
 			input(type="text" name="tel" placeholder="телефон")
+			input(type="datetime" name="dateandtime" placeholder="дата и время")
+			input(type="text" name="typevideo" placeholder="тип видео")
+			textarea
 			input(type="submit" value="отправить заявку")

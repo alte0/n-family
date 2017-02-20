@@ -3,13 +3,21 @@
 	text-align: center;
 	color: #2f64a1;
 	padding-top: 9px;
-	@media (min-width: 1915px) {
+	@media (min-width: 1001px) {
 		padding-top: 31px;
 	}
 	&-contacts {
-		@media (min-width: 1000px) {
-			padding-top: 23px;
+		@media (min-width: 361px) and (max-width: 767px) {
+			text-align: center;
 		}
+		@media (min-width: 768px) and (max-width: 1000px) {
+			padding-top: 23px;
+			// padding-left: 30px;
+			text-align: left;
+		}
+		@media (min-width: 1001px) {
+				padding-top: 25px;
+			}
 		&-slogan {
 			text-align: left;
 			display: flex;
@@ -17,14 +25,16 @@
 			padding-top: 10px;
 		}
 		&-order {
-			padding-top: 10px;
+			padding-top: 11px;
 			position: relative;
+			@media (min-width: 361px) and (max-width: 1000px) {
+			}
 			&:after {
 				content: "";
 				position: absolute;
 				margin: auto;
 				display: block;
-				@media (max-width: 999px) {
+				@media (max-width: 767px) {
 					left: 0;
 					right: 0;
 					bottom: -8px;
@@ -33,8 +43,8 @@
 					background-color: #af9798;
 					border: 1px solid #e4e2e2;
 				}
-				@media (min-width: 1000px) {
-					left: 0;
+				@media (min-width: 768px) {
+					left: 0px;
 					top: 0;
 					bottom: 0;
 					width: 1px;
@@ -52,40 +62,62 @@
 		font-weight: bold;
 		padding-left: 0;
 		margin-bottom: 8px;
-		@media (min-width: 1000px) {
+		@media (min-width: 361px) and (max-width: 1000px) {
 			font-size: 45.83px;
+			font-size: calc( (100vw - 361px)/(1000 - 361) * (45.83 - 20.83) + 20.83px);
 			line-height: 45.83px;
+			line-height: calc( (100vw - 361px)/(1000 - 361) * (45.83 - 20.83) + 20.83px);
 			letter-spacing: -0.05em;
 			margin-bottom: 2px;
 		}
-		@media (min-width: 1000px) {
-			margin-bottom: 10px;
+		@media (min-width: 1001px) {
+			margin-bottom: 0px;
+			font-size: 50px;
+			font-size: calc( (100vw - 1001px)/(1915 - 1001) * (50 - 45.83) + 45.83px);
+			line-height: 50px;
+			line-height: calc( (100vw - 1001px)/(1915 - 1001) * (50 - 45.83) + 45.83px);
 		}
 	}
 	& .call {
 		color: white;
 		padding: 7px 10px 5px 10px;
 		border-radius: 5px;
-		@media (min-width: 1000px) {
+		@media (min-width: 768px) and (max-width: 1000px) {
 			font-size: 25px;
+			font-size: calc( (100vw - 361px)/(1000 - 361) * (25 - 20.83) + 20.83px);
 			line-height: 62.39px;
-			padding: 10px 37px 13px 25px;
+			line-height: calc( (100vw - 361px)/(1000 - 361) * (62.39 - 20.83) + 20.83px);
+			padding: 10px 18px 13px 18px;
+			padding: 2% 4% 3% 4%;
 			border-radius: 12px;
+			margin-left: 55px;
+			margin-left: 12%;
+		}
+		@media (min-width: 1001px) {
+			border-radius: 12px;
+			font-size: 25px;
+			line-height: 66.67px;
+			padding: 2% 6% 3% 6%;
 		}
 	}
 	.logo-contacts {
 		width: 40px;
 		height: 38px;
 		margin-left: 59px;
-		@media (min-width: 1000px) {
-			width: 109px;
-			height: 106px;
-			margin-left: 67px;
-			margin-left: 0px;
+		margin-left: 17%;
+		@media (min-width: 361px) and (max-width: 767px) {
+			margin-left: 5%;
 		}
-		@media (min-width: 1915px) {
+		@media (min-width: 768px) and (max-width: 1000px) {
+			height: 106px;
+			width: 109px;
+			margin-left: 21px;
+			margin-left: 14%;
+		}
+		@media (min-width: 1001px) {
 			width: 118px;
 			height: 113px;
+			margin-left: 4%;
 		}
 	}
 	.contacts-slogan {
@@ -96,35 +128,44 @@
 		padding: 0;
 		margin-left: 4px;
 		width: 134px;
-		@media (min-width: 1000px) {
+		@media (min-width: 361px) and (max-width: 1000px) {
 			margin-left: 12px;
 			font-size: 25px;
+			font-size: calc( (100vw - 361px)/(1000 - 361) * (25 - 12.5) + 12.5px);
 			line-height: 27.3px;
+			line-height: calc( (100vw - 361px)/(1000 - 361) * (27.3 - 10) + 10px);
 			width: 230px;
 			}
-		@media (min-width: 1915px) {
-			line-height: 30px;
-		}
+		@media (min-width: 1001px) {
+			font-size: 25px;
+			font-size: calc( (100vw - 1001px)/(1915 - 1001) * (25 - 12.5) + 12.5px);
+			line-height: 24px;
+			line-height: calc( (100vw - 1001px)/(1915 - 1001) * (24 - 10) + 16px);
+			width: 260px;
+			}
 		}
 	}
 .social-btns__footer {
 	padding-top: 19px;
 	display: block;
 	position: static;
-	@media (min-width: 1000px) {
-		padding-top: 32px;
+	@media (min-width: 361px) and (max-width: 1000px) {
+		padding-top: 42px;
 	}
-	@media (min-width: 1915px) {
+	@media (min-width: 1001px) {
 		padding-top: 33px;
 	}
 	& .social-btn__inst {
-		background-image: url(../img/inst-hover.svg);
+		background-image: url('../img/inst-hover.svg');
 	}
 	& .social-btn__vk {
-		background-image: url(../img/vk-hover.svg);
+		background-image: url('../img/vk-hover.svg');
+		@media (min-width: 361px) and (max-width: 1000px) {
+			width: 84px;
+		}
 	}
 	& .social-btn__fb {
-		background-image: url(../img/fb-hover.svg);
+		background-image: url('../img/fb-hover.svg');
 	}
 }
 .bottom {
@@ -139,20 +180,24 @@
 			line-height: 16.67px;
 			letter-spacing: -0.07em;
 			margin-right: 9px;
+			margin-right: 0.75em;
 			&:last-child {
 				margin-right: 0px;
 			}
 			&:hover {
 				transform: rotate(10deg);
 			}
-			@media (min-width: 1000px) {
+			@media (min-width: 361px) and (max-width: 1000px) {
 				font-size: 45.83px;
+				font-size: calc( (100vw - 361px)/(1000 - 361) * (45.83 - 16.67) + 16.67px);
 				line-height: 45.83px;
-				margin-right: 33px;
+				line-height: calc( (100vw - 361px)/(1000 - 361) * (45.83 - 16.67) + 16.67px);
 			}
-			@media (min-width: 1915px) {
+			@media (min-width: 1001px) {
 				font-size: 50px;
+				font-size: calc( (100vw - 1001px)/(1915 - 1001) * (50 - 45.83) + 45.83px);
 				line-height: 50px;
+				line-height: calc( (100vw - 1001px)/(1915 - 1001) * (50 - 45.83) + 45.83px);
 			}
 			& .link {
 				color: #2f64a1;
@@ -161,13 +206,22 @@
 	}
 }
 .copyright {
-	padding-top: 10px;
+	padding-top: 13px;
 	font-weight: 300;
-	margin-bottom: 6px;
-	@media (min-width: 1000px) {
-		font-size: 29.17px;
-		line-height: 29.17px;
+	// margin-bottom: 6px;
+	letter-spacing: -0.05em;
+	@media (min-width: 361px) {
 		padding-top: 20px;
+	}
+	@media (min-width: 361px) and (max-width: 1000px) {
+		font-size: 29.17px;
+		font-size: calc( (100vw - 361px)/(1000 - 361) * (29.17 - 12.5) + 12.5px);
+		line-height: 29.17px;
+		line-height: calc( (100vw - 361px)/(1000 - 361) * (29.17 - 12.5) + 12.5px);
 		margin-bottom: 18px;
+	}
+	@media (min-width: 1001px) {
+		font-size: 25px;
+		line-height: 25px;
 	}
 }

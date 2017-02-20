@@ -8,6 +8,8 @@
 @import "../../bower_components/jquery-modal/jquery.modal";
 // import bootstrap-datepicker.css
 @import "../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker";
+// import slick
+@import "../../bower_components/slick-carousel/slick/slick.scss";
 // base
 @import "base/global";
 @import "base/mixin";
@@ -23,3 +25,4 @@
 @import "modules/order-form";
 // pages
 // @import "";
+// @import "../../bower_components/slick-carousel/slick/slick-theme.scss";

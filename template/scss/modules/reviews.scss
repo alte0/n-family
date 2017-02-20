@@ -7,12 +7,13 @@
 	box-shadow: 0px 0px 10px 4px black;
 	z-index: 1;
 	background-color: white;
-	@media (min-width: 1000px) {
+	@media (min-width: 361px) and (max-width: 1000px) {
 		padding-top: 70px;
-		border-radius: 0 0 100% 100%/0 0 40px 40px;
+		padding-bottom: 15px;
+		border-radius: 0 0 100% 100%/0 0 60px 60px;
 		box-shadow: 0px 0px 17px 7px black;
 	}
-	@media (min-width: 1915px) {
+	@media (min-width: 1001px) {
 		padding-top: 80px;
 		padding-bottom: 85px;
 		border-radius: 0 0 100% 100%/0 0 150px 150px;
@@ -26,57 +27,89 @@
 		right: 0;
 		background-repeat: no-repeat;
 		margin: auto;
-		z-index: 1;
+		@media (min-width: 1001px) {
+			z-index: 1;
+		}
 	}
 	&:after {
-		top: -12px;
-		width: 140px;
+		top: -14px;
+		// width: 140px;
 		height: 35px;
+		content: "отзывы";
+		text-shadow: black 0px 3px 5px;
+		color: white;
+		font-size: 30px;
+		line-height: 30px;
+		font-weight: 900;
+		transform: rotate(-2deg);
+		text-align: center;
+		right: 1%;
+		// background-image: url('../img/reviews-title.png');
+		// background-size: cover;
 		@include text-uppercase;
-		background-image: url(../img/reviews-title.png);
-		background-size: cover;
-		@media (min-width: 1000px) {
+		@media (min-width: 361px) and (max-width: 1000px) {
+			font-size: 75px;
+			font-size: calc( (100vw - 361px)/(1000 - 361) * (75 - 30) + 30px);
+			line-height: 75px;
+			line-height: calc( (100vw - 361px)/(1000 - 361) * (75 - 30) + 30px);
 			top: -50px;
-			width: 370px;
-			height: 90px;
+			top: -0.7em;
+			// width: 430px;
+			// height: 90px;
 		}
-		@media (min-width: 1915px) {
+		@media (min-width: 1001px) {
+			font-size: 112.5px;
+			font-size: calc( (100vw - 1001px)/(1915 - 1001) * (112.5 - 75) + 75px);
+			line-height: calc( (100vw - 1001px)/(1915 - 1001) * (112.5 - 75) + 75px);
 			top: -35px;
-			width: 550px;
-			height: 135px;
+			top: -0.35em;
+			// top: -9%;
+			// width: 550px;
+			// height: 135px;
 		}
 	}
 	&:before {
 		top: -12px;
-		width: 100%;
-		height: 40px;
-		background-image: url(../img/lines.png);
+		// width: 100%;
+		// height: 40px;
+		height: 181px;
+		background-image: url('../img/lines.png');
 		background-size: contain;
 		background-position: top center;
-		@media (min-width: 1000px) {
+		font-size: calc( (100vw - 361px)/(1000 - 361) * (37.5 - 12.5) + 12.5px);
+		@media (min-width: 361px) and (max-width: 1000px) {
 			top: -55px;
-			height: 100px;
+			top: -1.4em;
+			// height: 100px;
 		}
-		@media (min-width: 1915px) {
+		@media (min-width: 1001px) {
 			top: -70px;
-			height: 181px;
+			top: -0.91em;
+			// height: 181px;
 		}
 	}
 	&-img {
-		@media (min-width: 1915px) {
+		@media (min-width: 1001px) {
 			display: block;
-			margin-left: 40px;
+			@media (min-width: 1915px) {
+				margin-left: 40px;
+			}
 		}
 	}
 	&-item {
 		text-align: center;
-		@media (min-width: 1915px) {
+		@media (min-width: 1001px) {
 			text-align: left;
 		}
 		&-desc {
-			transform: rotate(-2deg) translateX(-1%);
-			@media (min-width: 1915px) {
+			// transform: rotate(-2deg);
+			@media (min-width: 1001px) {
 				padding-top: 93px;
+				font-size: calc( (100vw - 1001px)/(1915 - 1001) * (37.5 - 30) + 30px);
+				padding-top: 2.5em;
+			}
+			@media (min-width: 1915px) {
+				transform: rotate(-2deg) translateX(-6%);
 			}
 		}
 	}
@@ -87,38 +120,52 @@
 		letter-spacing: -0.06em;
 		font-weight: bold;
 		position: relative;
+		display: inline-block;
 		&:before {
 			position: absolute;
 			content: "семья";
 			top: -8px;
 			left: 18px;
-			@media (min-width: 1000px) {	
-			top: -25px;
-			left: 50px;
+			@media (min-width: 361px) {	
+				top: -25px;
+				left: 50px;
+				left: 50%;
+				transform: translateX(-56%)
 			}
 		}
-		@media (min-width: 1000px) {
+		@media (min-width: 361px) and (max-width: 1000px) {
 			font-size: 45.83px;
+			font-size: calc( (100vw - 361px)/(1000 - 361) * (45.83 - 16.67) + 16.67px);
 			line-height: 32.41px;
+			line-height: calc( (100vw - 361px)/(1000 - 361) * (32.41 - 11.66) + 11.66px);
 			letter-spacing: -0.06em;
 		}
-		@media (min-width: 1915px) {
+		@media (min-width: 1001px) {
 			font-size: 46.83px;
+			font-size: calc( (100vw - 1001px)/(1915 - 1001) * (46.83 - 45.83) + 45.83px);
 			line-height: 33.33px;
+			line-height: calc( (100vw - 1001px)/(1915 - 1001) * (33.33 - 32.41) + 32.41px);
 			letter-spacing: -0.06em;
 		}
 	}
 	&-text {
 		margin: 5px 20px 10px;
-		@media (min-width: 1000px) {
-			font-size: 37.5px;
-			line-height: 37.5px;
+		@media (min-width: 361px) and (max-width: 1000px) {
 			letter-spacing: -0.06em;
 			margin: 5px 20px 129px;
+			margin-bottom: 3.4em;
+			font-size: 37.5px;
+			font-size: calc( (100vw - 361px)/(1000 - 361) * (37.5 - 12.5) + 12.5px);
+			line-height: 37.5px;
+			line-height: calc( (100vw - 361px)/(1000 - 361) * (37.5 - 16) + 16px);
 		}
-		@media (min-width: 1915px) {
+		@media (min-width: 1001px) {
 			margin: 20px 0px 51px 0px;
 			line-height: 40px;
+			font-size: 37.5px;
+			font-size: calc( (100vw - 1001px)/(1915 - 1001) * (37.5 - 30) + 30px);
+			line-height: 37.5px;
+			line-height: calc( (100vw - 1001px)/(1915 - 1001) * (37.5 - 28) + 28px);
 		}
 	}
 	&-all {
@@ -130,38 +177,42 @@
 		letter-spacing: -0.06em;
 		display: inline-block;
 		position: relative;
-		@media (min-width: 1000px) {
+		@media (min-width: 361px) and (max-width: 1000px) {
 			font-size: 41.67px;
+			font-size: calc( (100vw - 361px)/(1000 - 361) * (41.67 - 20.83) + 20.83px);
 			line-height: 28.08px;
 			letter-spacing: -0.06em;
 			margin-bottom: 18px;
 		}
-		@media (min-width: 1915px) {
+		@media (min-width: 1001px) {
 			font-size: 50px;
 			line-height: 43.21px;
 			letter-spacing: -0.06em;
 		}
 	}
 }
+.reviews-item-desc > *{
+	transform: rotate(-2deg);
+}
 .arrow{
 	&-blue:after {
-		background-image: url(../img/arrow-blue.png);
+		background-image: url('../img/arrow-blue.png');
 		width: 12px;
 		height: 12px;
 		background-size: 55%;
 		background-position: bottom center;
-		@media (min-width: 1000px) {
+		@media (min-width: 361px) and (max-width: 1000px) {
 			width: 17px;
 			height: 28px;
 		}
 	}
 	&-green:after {
-		background-image: url(../img/arrow-green.png);
+		background-image: url('../img/arrow-green.png');
 		width: 15px;
 		height: 15px;
 		background-size: 55%;
 		background-position: bottom center;
-		@media (min-width: 1000px) {
+		@media (min-width: 361px) and (max-width: 1000px) {
 			width: 16px;
 			height: 30px;
 		}
@@ -174,10 +225,9 @@
 		bottom: 0;
 		margin: auto;
 		background-repeat: no-repeat;
-		@media (min-width: 1000px) {
+		@media (min-width: 361px) and (max-width: 1000px) {
 			right: -30px;
 			background-size: 100%;
 		}
 	}
 }
-// [class^="char"].animated

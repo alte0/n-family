@@ -1,7 +1,7 @@
 .order-form {
 	max-width: 610px;
 	border-radius: 32px;
-	padding: 20px 20px 35px 30px;
+	padding: 20px 10px 15px 19px;
 	color: #2F64A1;
 	&__header {
 		display: flex;
@@ -11,46 +11,64 @@
 	.column-left {
 		font-size: 60px;
 		font-weight: 600;
-		letter-spacing: -0.05em;
+		letter-spacing: -0.04em;
+		padding-left: 11px;
 	}
 	.column-right {
-		font-size: 35px;
-		letter-spacing: -0.13em;
+		font-size: 29px;
+		line-height: 29px;
+		font-weight: bold;
 		text-align: right;
+		letter-spacing: -0.05em;
+		padding-right: 17px;
 	}
 	.day-month {
-		font-size: 30px;
-		line-height: 20px;
-		letter-spacing: -0.08em;
+		// font-size: 24px;
+		// letter-spacing: -0.08em;
 	}
 	&__desc {
 		text-align: center;
-		font-size: 30px;
-		padding-top: 17px;
-		letter-spacing: -0.07em;
+    font-size: 24px;
+    padding-top: 22px;
+    letter-spacing: -0.05em;
+    font-weight: bold;
 		@include text-uppercase;
 	}
 	&__footer {
-		padding: 0 120px;
+		padding: 0 130px;
 		text-align: center;
 	}
-	input {
+	input, textarea {
 		width: 100%;
 		display: inline-block;
 		border-radius: 10px;
-		border: 1px solid #2F64A1;
-		padding: 10px;
+		border: 2px solid #2F64A1;
+		padding: 5px 10px 5px 10px;
 		margin-bottom: 10px;
 		outline: none;
+		font-size: 24px;
+		line-height: 24px;
+		font-weight: 300;
 		&[type="submit"] {
 			width: 140px;
 			background-color: #2F64A1;
 			color: white;
+			font-size: 14px;
+			line-height: 14px;
+			padding: 9px 10px 9px 10px;
+    	border-radius: 6px;
 		}
+		&::placeholder {
+			text-align: center;
+		}
+	}
+	textarea {
+		height: 96px;
 	}
 }
 .datepicker-inline, .table-condensed {
 	width: 100%;
+	height: 431px;
 }
 .table-condensed {
 	font-size: 30px;
@@ -58,4 +76,61 @@
 }
 .datepicker-switch {
 	@include text-uppercase;
+}
+
+
+.datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {
+	color: inherit;
+}
+.datepicker table tr td.day.free-time:hover {
+	background: none;
+}
+td.day {
+	position: relative;
+	&.disabled:before {
+		position: absolute;
+		content: "";
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 10px;
+		height: 10px;
+		background-color: #ee1d24;
+		border-radius: 50%;
+		margin: auto;
+	}
+}
+.day.free-time:hover {
+	position: relative;
+	color: white;
+	&:after {
+		position: absolute;
+		content: "";
+		background-color: #8bb913;
+		border-radius: 50%;
+		color: white;
+		height: 46px;
+		width: 46px;
+		left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+	}
+}
+.day.free-day {
+	position: relative;
+	&:after {
+		position: absolute;
+		content: "";
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 10px;
+		height: 10px;
+		background-color: #8bb913;
+		border-radius: 50%;
+		margin: auto;
+	}
 }

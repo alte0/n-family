@@ -1,12 +1,19 @@
+@keyframes animatewith {
+	0% {flex-grow: 1}
+	100% {flex-grow: 10}
+}
 .portfolio{
 	position: relative;
 	margin-top: -14px;
-	@media (min-width: 1000px) {
+	@media (min-width: 361px) and (max-width: 1000px) {
 		margin-top: -47px;
+	}
+	@media (min-width: 1001px){
+		margin-top: -50px;
 	}
 	&-title {
 		display: none;
-		@media (min-width: 1915px) {
+		@media (min-width: 1001px) {
 			display: block;
 			@include text-uppercase;
 			font-weight: 900;
@@ -16,6 +23,7 @@
 			right: 0;
 			margin: auto;
 			font-size: 75px;
+			font-size: calc( (100vw - 1001px)/(1915 - 1001) * (75 - 30) + 30px);
 			line-height: 64.82px;
 			letter-spacing: -0.06em;
 			color: #2f64a1;
@@ -30,48 +38,58 @@
 		height: 205px;
 		background-repeat: no-repeat;
 		background-size: cover;
-		background-position: 0 50%;
-		width: 100%;
-		@media (min-width: 1000px) {
+		background-position: center;
+		flex-grow: 1;
+		@media (min-width: 361px) and (max-width: 1000px) {
 			height: 574px;
 		}
-		@media (min-width: 1915px) {
+		@media (min-width: 1001px) {
 			height: 904px;
 			opacity: 0.53;
 			&:hover {
 				opacity: 1;
+				flex-grow: 10;
+				animation: animatewith 1.5s ease;
 			}
 		}
 		&:nth-child(1) {
-			background-image: url(../img/portfolio1.jpg);
+			background-image: url('../img/portfolio1.jpg');
 			background-size: 130%;
 			background-position: 92% 50%;
-			@media (min-width: 1915px) {
+			@media (min-width: 361px) {
+				background-size: cover;
+				background-position: center;
+			}
+			@media (min-width: 753px) {
+				background-size: 130%;
+				background-position: 91% 50%;
+			}
+			@media (min-width: 1001px) {
 				background-size: cover;
 				background-position: 40% 50%;
 			}
 		}
 		&:nth-child(2) {
-			background-image: url(../img/portfolio2.jpg);
-			@media (min-width: 1915px) {
+			background-image: url('../img/portfolio2.jpg');
+			@media (min-width: 1001px) {
 				background-position: 40% 50%;
 			}
 		}
 		&:nth-child(3) {
-			background-image: url(../img/portfolio3.jpg);
-			@media (min-width: 1915px) {
+			background-image: url('../img/portfolio3.jpg');
+			@media (min-width: 1001px) {
 				background-position: 65% 50%;
 			}
 		}
 		&:nth-child(4) {
-			background-image: url(../img/portfolio4.jpg);
-			@media (min-width: 1915px) {
+			background-image: url('../img/portfolio4.jpg');
+			@media (min-width: 1001px) {
 				background-position: 55% 50%;
 			}
 		}
 		&:nth-child(5) {
-			background-image: url(../img/portfolio5.jpg);
-			@media (min-width: 1915px) {
+			background-image: url('../img/portfolio5.jpg');
+			@media (min-width: 1001px) {
 				background-position: 50% 50%;
 			}
 		}
@@ -79,7 +97,7 @@
 			display: flex;
 			flex-direction: column;
 			flex-basis: 100%;
-			@media (min-width: 1915px) {
+			@media (min-width: 1001px) {
 				flex-direction: row;
 			}
 		}
@@ -90,33 +108,43 @@
 			color: white;
 			font-size: 29.17px;
 			line-height: 24.39px;
-			width: 180px;
+			// width: 180px;
 			position: relative;
 			left: 50%;
 			top: 55%;
 			margin: 0;
 			transform: translate(-50%, -50%);
-			@media (min-width: 1000px) {
-				font-size: 79.17px;
-				line-height: 67.8px;
-				width: 500px;
+			display: inline-block;
+			@media (min-width: 361px) and (max-width: 1000px) {
+				// font-size: 79.17px;
+				font-size: calc( (100vw - 361px)/(1000 - 361) * (79.17 - 29.17) + 29.17px);
+				// line-height: 67.8px;
+				line-height: calc( (100vw - 361px)/(1000 - 361) * (67.8 - 24.39) + 24.39px);
+				// width: 200px;
 			}
-			@media (min-width: 1915px) {
+			@media (min-width: 1001px) {
 				color: #2f64a1;
-				font-size: 50px;
-				line-height: 43.21px;
-				width: auto;
+				// font-size: 50px;
+				font-size: calc( (100vw - 1001px)/(1915 - 1001) * (50 - 30) + 30px);
+				// line-height: 43.21px;
+				line-height: calc( (100vw - 1001px)/(1915 - 1001) * (50 - 30) + 30px);
+				// width: auto;
 			}
 		}
 	}
 	& .order-video {
 		display: none;
-		@media (min-width: 1915px) {
+		@media (min-width: 1001px) {
+			font-size: 37.5px;
+			font-size: calc( (100vw - 1001px)/(1915 - 1001) * (37.5 - 30) + 30px);
+			line-height: 33.09px;
+			line-height: calc( (100vw - 1001px)/(1915 - 1001) * (33.09 - 25) + 25px);
 			display: block;
-			bottom: 25px;
-			padding: 12px;
-			letter-spacing: -0.13em;
-			max-width: 485px;
+			bottom: 20px;
+			padding: 2% 1% 2% 1%;
+			// letter-spacing: -0.13em;
+			width: 485px;
+			border-radius: 20px;
 		}
 	}
 }

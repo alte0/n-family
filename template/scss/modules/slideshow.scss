@@ -1,12 +1,66 @@
 .slideshow {
 	display: none;
 	height: 908px;
-	background-image: url(../img/bg-slideshow.jpg);
+	background-image: url('../img/bg-slideshow.jpg');
 	background-position: 0% 16%;
 	background-repeat: no-repeat;
 	border-radius: 0 0 100% 100%/0 0 110px 110px;
 	background-size: cover;
-	@media (min-width: 1915px) {
+	@media (min-width: 1001px) {
 		display: block;
 	}
+	&-item {
+		height: 100%;
+	}
+	video {
+		height: 55%;
+    margin: 0 auto;
+    margin-top: 5%;
+    display: block;
+	}
+	.slick-dots {
+		top: 50px;
+	}
+}
+
+.slick-dots {
+	text-align: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	button {
+		display: none;
+	}
+	li {
+		border-radius: 50%;
+		border: 4px solid white;
+		display: inline-block;
+		cursor: pointer;
+		width: 26px;
+		height: 26px;
+		margin-right: 18px;
+		&:last-child {
+			margin-right: 0px;
+		}
+	}
+	& .slick-active {
+		background-color: white;
+	}
+}
+.reviews .slick-dots {
+	li {
+		border: 4px solid black;
+	}
+	& .slick-active {
+		border: 4px solid #2f64a1;
+		background-color: #2f64a1;
+	}
+}
+.slideshow {
+	& .slick-list, & .slick-track {
+		height: 100%;
+	}
+}
+.news-article-slider .slick-dots {
+	bottom: 50px;
 }
