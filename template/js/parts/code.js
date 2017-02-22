@@ -16,6 +16,15 @@
 			return false;
 		});
 
+		// проверка на класс 
+		function checkClass(checkClass) {
+			var hasClass = 'slick-initialized';
+			if ( checkClass.hasClass(hasClass) ) {
+				return true;
+			}
+			return false;
+		}
+
 		//перехватываем нажатие на контакты на десктопе, что бы открыть выпадающие инфо контактов и инициальзация сладеров
 		var desktop = '1001',
 				itemLinkContact = $('#contact'),
@@ -31,7 +40,7 @@
 		function widthSreen(widthWindow) {
 			if (widthWindow >= desktop) {
 				// console.log(widthWindow);
-				console.log('больше' + desktop);
+				// console.log('больше' + desktop);
 					itemLinkContact.on('click', function(event) {
 						// event.preventDefault();
 						panelContact.css('display', 'block');
@@ -39,51 +48,57 @@
 						return false;
 						/* Act on the event */
 					});
-					sliderVideo.slick({
-						dots: true,
-					  infinite: true,
-					  speed: 1000,
-					  slidesToShow: 1,
-					  // adaptiveHeight: true,
-						slidesToScroll: 1,
-					  autoplay: true,
-					  autoplaySpeed: 5000,
-						arrows: false
-		      });
-					sliderReviewsClone.clone().appendTo(sliderReviews);
-					sliderReviews.slick({
-						dots: true,
-					  infinite: true,
-					  speed: 1000,
-					  slidesToShow: 1,
-					  // adaptiveHeight: true,
-						slidesToScroll: 1,
-					  autoplay: true,
-					  autoplaySpeed: 3000,
-						arrows: false
-		      });
-					sliderNewsClone.clone().appendTo(sliderNews);
-					sliderNews.slick({
-						dots: true,
-					  infinite: true,
-					  speed: 1000,
-					  slidesToShow: 1,
-					  // adaptiveHeight: true,
-						slidesToScroll: 1,
-					  autoplay: true,
-					  autoplaySpeed: 2500,
-						arrows: false
-		      });
+					if ( !checkClass(sliderVideo) ) {
+							sliderVideo.slick({
+							dots: true,
+						  infinite: true,
+						  speed: 1000,
+						  slidesToShow: 1,
+						  // adaptiveHeight: true,
+							slidesToScroll: 1,
+						  autoplay: true,
+						  autoplaySpeed: 5000,
+							arrows: false
+			      });
+					}
+					if ( !checkClass(sliderReviews) ) {
+						sliderReviewsClone.clone().appendTo(sliderReviews);
+						sliderReviews.slick({
+							dots: true,
+						  infinite: true,
+						  speed: 1000,
+						  slidesToShow: 1,
+						  // adaptiveHeight: true,
+							slidesToScroll: 1,
+						  autoplay: true,
+						  autoplaySpeed: 3000,
+							arrows: false
+			      });
+					}
+					if ( !checkClass(sliderNews) )  {
+						sliderNewsClone.clone().appendTo(sliderNews);
+						sliderNews.slick({
+							dots: true,
+						  infinite: true,
+						  speed: 1000,
+						  slidesToShow: 1,
+						  // adaptiveHeight: true,
+							slidesToScroll: 1,
+						  autoplay: true,
+						  autoplaySpeed: 2500,
+							arrows: false
+			      });
+					}
 			} else {
-				console.log('меньше ' + desktop);
-				if ( sliderVideo.hasClass('slick-initialized') ) {
+				// console.log('меньше ' + desktop);
+				if ( checkClass(sliderVideo) ) {
 					sliderVideo.slick('unslick');
 				}
-				if ( sliderReviews.hasClass('slick-initialized') ) {
+				if ( checkClass(sliderReviews) ) {
 					sliderReviews.slick('unslick');
 					sliderReviews.find('.reviews-item:nth-child(2)').remove();
 				}
-				if ( sliderNews.hasClass('slick-initialized') ) {
+				if ( checkClass(sliderNews))  {
 					sliderNews.slick('unslick');
 					sliderNews.find('.news-article:nth-child(2)').remove();
 				}
@@ -116,9 +131,9 @@
 		  // sets the initial delay before starting the animation
 		  // (note that depending on the in effect you may need to manually apply
 		  // visibility: hidden to the element before running this plugin)
-		  initialDelay: 1000,
+		  initialDelay: 2000,
 		  // set whether or not to automatically start animating
-		  autoStart: false,
+		  autoStart: true,
 		  // in animation settings
 		  in: {
 		    // set the effect name
@@ -126,7 +141,7 @@
 		    // set the delay factor applied to each consecutive character
 		    // delayScale: 1.5,
 		    // set the delay between each character
-		    delay: 100,
+		    delay: 1000,
 		    // set to true to animate all the characters at the same time
 		    sync: false,
 		    // randomize the character sequence
