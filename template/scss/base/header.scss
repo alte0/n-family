@@ -273,8 +273,9 @@
 		display: block;
 	}
 	.main {
-		&-menu {
+		&-menu-wrap {
 			padding: 188px 44px;
+			padding-bottom: 0px;
 			position: absolute;
 			right: 0;
 			top: -27px;
@@ -285,6 +286,9 @@
 				display: block;
 				animation: animateMenu 1s linear;
 			}
+			
+		}
+		&-menu {
 			& li {
 				margin-bottom: 16px;
 				margin-bottom: 1.3em;

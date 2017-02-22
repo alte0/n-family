@@ -12,11 +12,12 @@
 			nav.main-navigation
 				ul.panel-menu
 					li.panel-menu-item: a.link(href="#")
-				ul.main-menu.main-menu-lists
-					li: a.link.main-menu-item(href="#about") О нас
-					li: a.link.main-menu-item(href="#portfolio") Портфолио
-					li: a.link.main-menu-item(href="#reviews") Отзывы
-					li: a.link.main-menu-item#contact(href="#footer") Контакты
+				.main-menu-wrap
+					ul.main-menu.main-menu-lists#sticky
+						li: a.link.main-menu-item(href="#about") О нас
+						li: a.link.main-menu-item(href="#portfolio") Портфолио
+						li: a.link.main-menu-item(href="#reviews") Отзывы
+						li: a.link.main-menu-item#contact(href="#footer") Контакты
 			.row.header-footer
 				.w-100
 					picture

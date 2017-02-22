@@ -1,15 +1,16 @@
 (function($, undefined) {
 	$(function() {
-
 		//открытие меню
 		var header = $('#header');
 		var navigation = header.find('.main-navigation');
+		var menuWrap = header.find('.main-menu-wrap');
 		var panelMenu = header.find('.panel-menu');
 		var panelMenuItem = header.find('.panel-menu-item');
 		var menu  = header.find('.main-menu');
 		var clickPanelMenu = panelMenu.find('.link').click(function(event) {
 			/* Act on the event */
 			navigation.toggleClass('main-navigation__open-js');
+			menuWrap.toggleClass('main-menu-wrap__open-js');
 			panelMenu.toggleClass('panel-menu__open-js');
 			panelMenuItem.toggleClass('panel-menu-item__open-js');
 			menu.toggleClass('main-menu__open-js');
@@ -36,6 +37,10 @@
 				sliderReviewsClone = sliderReviews.find('.reviews-item');
 				sliderNews = $('.news-article-slider');
 				sliderNewsClone = sliderNews.find('.news-article');
+		var sticky = $('#sticky');
+				sticky.fixTo('.main-menu-wrap', {
+					useNativeSticky : false
+					});
 
 		function widthSreen(widthWindow) {
 			if (widthWindow >= desktop) {
@@ -48,6 +53,9 @@
 						return false;
 						/* Act on the event */
 					});
+					//инит стики меню
+					sticky.fixTo('start');
+
 					if ( !checkClass(sliderVideo) ) {
 							sliderVideo.slick({
 							dots: true,
@@ -102,6 +110,8 @@
 					sliderNews.slick('unslick');
 					sliderNews.find('.news-article:nth-child(2)').remove();
 				}
+				// стики меню стоп
+				sticky.fixTo('stop');
 			}
 		};
 		// узнаем ширину window

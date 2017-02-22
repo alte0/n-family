@@ -5,5 +5,6 @@
 //= ../../bower_components/jquery-modal/jquery.modal.js
 //= ../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js
 //= ../../bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js
+//= ../../bower_components/fixto/dist/fixto.js
 
 //= parts/code.js

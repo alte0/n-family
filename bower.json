@@ -20,6 +20,7 @@
     "bootstrap-4-grid": "^1.0.2",
     "textillate": "^0.4.0",
     "jquery-modal": "^0.8.0",
-    "bootstrap-datepicker": "^1.6.4"
+    "bootstrap-datepicker": "^1.6.4",
+    "fixto": "^0.3.1"
   }
 }
