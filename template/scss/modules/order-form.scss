@@ -13,6 +13,9 @@
 		font-weight: 600;
 		letter-spacing: -0.04em;
 		padding-left: 11px;
+		@media (max-width: 500px) {
+			font-size: 30px;
+		}
 	}
 	.column-right {
 		font-size: 29px;
@@ -21,6 +24,9 @@
 		text-align: right;
 		letter-spacing: -0.05em;
 		padding-right: 17px;
+		@media (max-width: 500px) {
+			font-size: 15px;
+		}
 	}
 	.day-month {
 		// font-size: 24px;
@@ -35,8 +41,14 @@
 		@include text-uppercase;
 	}
 	&__footer {
-		padding: 0 130px;
+		padding: 0 5%;
 		text-align: center;
+		@media (min-width: 500px) {
+			padding: 0 22.5%;
+		}
+		& input[type="submit"] {
+			@include text-uppercase;
+		}
 	}
 	input, textarea {
 		width: 100%;
@@ -50,7 +62,7 @@
 		line-height: 24px;
 		font-weight: 300;
 		&[type="submit"] {
-			width: 140px;
+			width: 150px;
 			background-color: #2F64A1;
 			color: white;
 			font-size: 14px;
@@ -68,11 +80,16 @@
 }
 .datepicker-inline, .table-condensed {
 	width: 100%;
-	height: 431px;
+	@media (min-width: 500px) {
+		height: 431px;
+	}
 }
 .table-condensed {
 	font-size: 30px;
 	padding-top: 12px;
+	@media (max-width: 500px) {
+		font-size: 15px;
+	}
 }
 .datepicker-switch {
 	@include text-uppercase;
@@ -98,6 +115,10 @@ td.day {
 		background-color: #ee1d24;
 		border-radius: 50%;
 		margin: auto;
+		@media (max-width: 500px) {
+			width: 5px;
+			height: 5px;
+		}
 	}
 }
 .day.free-time:hover {
@@ -117,6 +138,10 @@ td.day {
     z-index: -1;
     top: 0;
     bottom: 0;
+		@media (max-width: 500px) {
+			width: 15px;
+			height: 15px;
+		}
 	}
 }
 .day.free-day {
@@ -132,5 +157,9 @@ td.day {
 		background-color: #8bb913;
 		border-radius: 50%;
 		margin: auto;
+		@media (max-width: 500px) {
+			width: 5px;
+			height: 5px;
+		}
 	}
 }
