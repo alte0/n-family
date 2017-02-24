@@ -5537,6 +5537,9 @@ img {
     font-weight: 600;
     letter-spacing: -0.04em;
     padding-left: 11px; }
+    @media (max-width: 500px) {
+      .order-form .column-left {
+        font-size: 30px; } }
   .order-form .column-right {
     font-size: 29px;
     line-height: 29px;
@@ -5544,6 +5547,9 @@ img {
     text-align: right;
     letter-spacing: -0.05em;
     padding-right: 17px; }
+    @media (max-width: 500px) {
+      .order-form .column-right {
+        font-size: 15px; } }
   .order-form__desc {
     text-align: center;
     font-size: 24px;
@@ -5552,8 +5558,13 @@ img {
     font-weight: bold;
     text-transform: uppercase; }
   .order-form__footer {
-    padding: 0 130px;
+    padding: 0 5%;
     text-align: center; }
+    @media (min-width: 500px) {
+      .order-form__footer {
+        padding: 0 22.5%; } }
+    .order-form__footer input[type="submit"] {
+      text-transform: uppercase; }
   .order-form input, .order-form textarea {
     width: 100%;
     display: inline-block;
@@ -5566,7 +5577,7 @@ img {
     line-height: 24px;
     font-weight: 300; }
     .order-form input[type="submit"], .order-form textarea[type="submit"] {
-      width: 140px;
+      width: 150px;
       background-color: #2F64A1;
       color: white;
       font-size: 14px;
@@ -5579,12 +5590,17 @@ img {
     height: 96px; }
 
 .datepicker-inline, .table-condensed {
-  width: 100%;
-  height: 431px; }
+  width: 100%; }
+  @media (min-width: 500px) {
+    .datepicker-inline, .table-condensed {
+      height: 431px; } }
 
 .table-condensed {
   font-size: 30px;
   padding-top: 12px; }
+  @media (max-width: 500px) {
+    .table-condensed {
+      font-size: 15px; } }
 
 .datepicker-switch {
   text-transform: uppercase; }
@@ -5608,6 +5624,10 @@ td.day {
     background-color: #ee1d24;
     border-radius: 50%;
     margin: auto; }
+    @media (max-width: 500px) {
+      td.day.disabled:before {
+        width: 5px;
+        height: 5px; } }
 
 .day.free-time:hover {
   position: relative;
@@ -5626,6 +5646,10 @@ td.day {
     z-index: -1;
     top: 0;
     bottom: 0; }
+    @media (max-width: 500px) {
+      .day.free-time:hover:after {
+        width: 15px;
+        height: 15px; } }
 
 .day.free-day {
   position: relative; }
@@ -5640,5 +5664,9 @@ td.day {
     background-color: #8bb913;
     border-radius: 50%;
     margin: auto; }
+    @media (max-width: 500px) {
+      .day.free-day:after {
+        width: 5px;
+        height: 5px; } }
 
 /*# sourceMappingURL=style.css.map */

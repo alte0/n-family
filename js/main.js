@@ -16620,6 +16620,44 @@ var fixto = (function ($, window, document) {
 							arrows: false
 			      });
 					}
+					//перемещение блока заказа видео
+					var portfolio = $("#portfolio");
+					var portfolioBox = portfolio.find('.order-video');
+					var moveOrder = portfolio.find('.portfolio-video');
+							moveOrder.hover(function(event) {
+								/* Stuff to do when the mouse enters the element */
+								var targetId = event.target.id;
+								// console.log( targetId );
+								switch( targetId ) {
+									case 'portfolio1':
+										percent = "20%";
+										break;
+									case 'portfolio2':
+										percent = "35%";
+										break;
+									case 'portfolio3':
+										percent = "50%";
+										break;
+									case 'portfolio4':
+										percent = "65%";
+										break;
+									case 'portfolio5':
+										percent = "80%";
+										break;
+									default:
+										percent = "50%";
+										break;
+								};
+								portfolioBox.stop().animate({
+									'left': percent
+								}, 700)
+							}, function() {
+								/* Stuff to do when the mouse leaves the element */
+								portfolioBox.stop().animate({
+									'left': '50%'
+								}, 300)
+							});
+
 			} else {
 				// console.log('меньше ' + desktop);
 				if ( checkClass(sliderVideo) ) {
@@ -16653,54 +16691,54 @@ var fixto = (function ($, window, document) {
 		});
 
 		// анимация текста
-		var $reviews = $('#reviews');
-		var $animateText = $reviews.find('.animate-text').textillate({
-		  // the default selector to use when detecting multiple texts to animate
-		  selector: '.texts',
-		  // enable looping
-		  loop: true,
-		  // sets the minimum display time for each text before it is replaced
-		  minDisplayTime: 500,
-		  // sets the initial delay before starting the animation
-		  // (note that depending on the in effect you may need to manually apply
-		  // visibility: hidden to the element before running this plugin)
-		  initialDelay: 2000,
-		  // set whether or not to automatically start animating
-		  autoStart: true,
-		  // in animation settings
-		  in: {
-		    // set the effect name
-		    effect: 'fadeIn',
-		    // set the delay factor applied to each consecutive character
-		    // delayScale: 1.5,
-		    // set the delay between each character
-		    delay: 1000,
-		    // set to true to animate all the characters at the same time
-		    sync: false,
-		    // randomize the character sequence
-		    // (note that shuffle doesn't make sense with sync = true)
-		    shuffle: false,
-		    // reverse the character sequence
-		    // (note that reverse doesn't make sense with sync = true)
-		    reverse: false
-		  },
-		  // out animation settings.
-		  out: {
-		    effect: 'fadeOut',
-		    delay: 0,
-		    sync: false,
-		    shuffle: false,
-		    reverse: true,
-		    callback: function () {}
-		  },
+		// var $reviews = $('#reviews');
+		// var $animateText = $reviews.find('.animate-text').textillate({
+		//   // the default selector to use when detecting multiple texts to animate
+		//   selector: '.texts',
+		//   // enable looping
+		//   loop: true,
+		//   // sets the minimum display time for each text before it is replaced
+		//   minDisplayTime: 500,
+		//   // sets the initial delay before starting the animation
+		//   // (note that depending on the in effect you may need to manually apply
+		//   // visibility: hidden to the element before running this plugin)
+		//   initialDelay: 2000,
+		//   // set whether or not to automatically start animating
+		//   autoStart: false,
+		//   // in animation settings
+		//   in: {
+		//     // set the effect name
+		//     effect: 'fadeIn',
+		//     // set the delay factor applied to each consecutive character
+		//     // delayScale: 1.5,
+		//     // set the delay between each character
+		//     delay: 1000,
+		//     // set to true to animate all the characters at the same time
+		//     sync: false,
+		//     // randomize the character sequence
+		//     // (note that shuffle doesn't make sense with sync = true)
+		//     shuffle: false,
+		//     // reverse the character sequence
+		//     // (note that reverse doesn't make sense with sync = true)
+		//     reverse: false
+		//   },
+		//   // out animation settings.
+		//   out: {
+		//     effect: 'fadeOut',
+		//     delay: 0,
+		//     sync: false,
+		//     shuffle: false,
+		//     reverse: true,
+		//     callback: function () {}
+		//   },
 
-		  // callback that executes once textillate has finished
-		  callback: function () {},
+		//   // callback that executes once textillate has finished
+		//   callback: function () {},
 
-		  // set the type of token to animate (available types: 'char' and 'word')
-  		type: 'char'
+		//   // set the type of token to animate (available types: 'char' and 'word')
+  // 		type: 'char'
 
-		});;
+		// });;
 
 		  // $animateText.textillate('start');
 		// $reviews.find('.reviews-family, .reviews-all').hover(function() {
