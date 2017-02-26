@@ -16731,16 +16731,13 @@ var fixto = (function ($, window, document) {
 		//     reverse: true,
 		//     callback: function () {}
 		//   },
-
 		//   // callback that executes once textillate has finished
 		//   callback: function () {},
-
 		//   // set the type of token to animate (available types: 'char' and 'word')
-  // 		type: 'char'
+  // 		// type:'char'
+		// });
 
-		// });;
-
-		  // $animateText.textillate('start');
+		//   $animateText.textillate('start');
 		// $reviews.find('.reviews-family, .reviews-all').hover(function() {
 		// 	/* Stuff to do when the mouse enters the element */
 		//   $animateText.textillate('start');

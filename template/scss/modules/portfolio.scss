@@ -9,7 +9,7 @@
 		margin-top: -47px;
 	}
 	@media (min-width: 1001px){
-		margin-top: -50px;
+		margin-top: -47px;
 	}
 	&-title {
 		display: none;
@@ -45,6 +45,7 @@
 		}
 		@media (min-width: 1001px) {
 			height: 904px;
+			height: calc(100vw / 2.118362831858407 );
 			opacity: 0.53;
 			&:hover {
 				opacity: 1;
