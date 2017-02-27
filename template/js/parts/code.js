@@ -130,7 +130,7 @@
 								}, 700);
 							});
 							portfolio.mouseleave(function(event) {
-									setTimeout( function(){portfolioBox.stop().animate({'left': '50%'}, 300)} , 5000);
+									portfolioBox.stop().animate({'left': '50%'}, 300);
 							});
 			} else {
 				// console.log('меньше ' + desktop);
