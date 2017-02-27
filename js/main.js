@@ -16624,8 +16624,8 @@ var fixto = (function ($, window, document) {
 					var portfolio = $("#portfolio");
 					var portfolioBox = portfolio.find('.order-video');
 					var moveOrder = portfolio.find('.portfolio-video');
-							moveOrder.hover(function(event) {
-								/* Stuff to do when the mouse enters the element */
+							moveOrder.mouseenter(function(event) {
+								/* Act on the event */
 								var targetId = event.target.id;
 								// console.log( targetId );
 								switch( targetId ) {
@@ -16650,14 +16650,11 @@ var fixto = (function ($, window, document) {
 								};
 								portfolioBox.stop().animate({
 									'left': percent
-								}, 700)
-							}, function() {
-								/* Stuff to do when the mouse leaves the element */
-								portfolioBox.stop().animate({
-									'left': '50%'
-								}, 300)
+								}, 700);
 							});
-
+							portfolio.mouseleave(function(event) {
+									setTimeout( function(){portfolioBox.stop().animate({'left': '50%'}, 300)} , 5000);
+							});
 			} else {
 				// console.log('меньше ' + desktop);
 				if ( checkClass(sliderVideo) ) {
