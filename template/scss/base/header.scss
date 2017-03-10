@@ -264,31 +264,36 @@
 @media (min-width: 1001px) {
 	@keyframes animateMenu {
 		0% {transform: translateX(100%)}
-		20% {transform: translateX(50%)}
-		50% {transform: translateX(0%)}
-		70% {transform: translateX(-20%)}
 		100% {transform: translateX(0%)}
+	}
+	@keyframes animateBgMenu {
+		0% {box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5) inset;}
+		100% {box-shadow: -380px 0px 0px 0px rgba(0, 0, 0, 0.5) inset;}
 	}
 	.social-btns {
 		display: block;
 	}
 	.main {
-		&-menu-wrap {
-			padding: 188px 44px;
-			padding-bottom: 0px;
+		&-navigation{
 			position: absolute;
 			right: 0;
 			top: -27px;
 			bottom: 0;
-			background-color: rgba(0, 0, 0, 0.5);
+			&__open-js {
+				animation: animateBgMenu 1s linear;
+				box-shadow: -380px 0px 0px 0px rgba(0, 0, 0, 0.5) inset;
+			}
+		}
+		&-menu-wrap {
+		}
+		&-menu {
 			display: none;
+			padding: 188px 44px;
+			padding-bottom: 0px;
 			&__open-js {
 				display: block;
 				animation: animateMenu 1s linear;
 			}
-			
-		}
-		&-menu {
 			& li {
 				margin-bottom: 16px;
 				margin-bottom: 1.3em;
@@ -307,7 +312,7 @@
 	.panel-menu {
 		&-item {
 			position: absolute;
-			top: 55px;
+			top: 82px;
 			right: 0;
 			border: 1px solid #666462;
 			border-top-left-radius: 11px;
@@ -325,6 +330,7 @@
 				margin-left: 16px;
 			}
 			&__open-js {
+				// position: static;
 				& .link {
 					background-image: url(../img/close-menu.svg);
 				}

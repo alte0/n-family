@@ -7,8 +7,7 @@
 		var panelMenu = header.find('.panel-menu');
 		var panelMenuItem = header.find('.panel-menu-item');
 		var menu  = header.find('.main-menu');
-		var clickPanelMenu = panelMenu.find('.link').click(function(event) {
-			/* Act on the event */
+		var clickPanelMenu = panelMenu.find('.link').on('click', function(event) {
 			navigation.toggleClass('main-navigation__open-js');
 			menuWrap.toggleClass('main-menu-wrap__open-js');
 			panelMenu.toggleClass('panel-menu__open-js');
@@ -16,7 +15,11 @@
 			menu.toggleClass('main-menu__open-js');
 			return false;
 		});
-
+		var sticky = $('#sticky');
+				sticky.fixTo('.main-navigation', {
+					useNativeSticky : false,
+					});
+				sticky.fixTo('stop');
 		// проверка на класс 
 		function checkClass(checkClass) {
 			var hasClass = 'slick-initialized';
@@ -31,16 +34,13 @@
 				itemLinkContact = $('#contact'),
 				panelContact = $('#contacts');
 
+		// sliders
 		var sliderVideo = $('#slideshow'),
 				// sliderReviews = $('.reviews-slider'),
 				sliderReviews = $('#reviews'),
 				sliderReviewsClone = sliderReviews.find('.reviews-item');
 				sliderNews = $('.news-article-slider');
 				sliderNewsClone = sliderNews.find('.news-article');
-		var sticky = $('#sticky');
-				sticky.fixTo('.main-menu-wrap', {
-					useNativeSticky : false
-					});
 
 		function widthSreen(widthWindow) {
 			if (widthWindow >= desktop) {
@@ -54,7 +54,15 @@
 						/* Act on the event */
 					});
 					//инит стики меню
-					sticky.fixTo('start');
+						var clickPanelMenu = panelMenu.find('.link').on('click', function(event) {
+								if ( panelMenu.hasClass('panel-menu__open-js') ) {
+									sticky.fixTo('start');
+									// console.log('start:');
+								} else {
+									sticky.fixTo('stop');
+									// console.log('stop:');
+								}
+						});
 
 					if ( !checkClass(sliderVideo) ) {
 							sliderVideo.slick({
@@ -132,6 +140,7 @@
 							portfolio.mouseleave(function(event) {
 									portfolioBox.stop().animate({'left': '50%'}, 300);
 							});
+							
 			} else {
 				// console.log('меньше ' + desktop);
 				if ( checkClass(sliderVideo) ) {
@@ -147,6 +156,7 @@
 				}
 				// стики меню стоп
 				sticky.fixTo('stop');
+				// sticky2.fixTo('stop');
 			}
 		};
 		// узнаем ширину window
