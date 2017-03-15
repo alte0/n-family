@@ -2,7 +2,6 @@
 	position: relative;
 	color: white;
 	text-align: center;
-	padding-top: 10px;
 	background: url('../img/bg-header.jpg') 41% 50% no-repeat;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -11,14 +10,21 @@
 	z-index: 1;
 	overflow: hidden;
 	@media (min-width: 361px) and (max-width: 1000px) {
-		padding-top: 34px;
 		border-radius: 0 0 100% 100%/0 0 40px 40px;
 		box-shadow: 0px 0px 17px 7px black;
 	}
 	@media (min-width: 1001px) {
-		padding-top: 27px;
 		border-radius: 0 0 100% 100%/0 0 110px 110px;
 		box-shadow: 0px 10px 15px 0px black;
+	}
+	&-header {
+		padding-top: 10px;
+		@media (min-width: 361px) and (max-width: 1000px) {
+			padding-top: 34px;
+		}
+		@media (min-width: 1001px) {
+			padding-top: 27px;
+		}	
 	}
 	&-title {
 		font-size: 20px;
@@ -272,12 +278,13 @@
 	}
 	.social-btns {
 		display: block;
+		padding-top: 27px;
 	}
 	.main {
 		&-navigation{
 			position: absolute;
 			right: 0;
-			top: -27px;
+			top: 0;
 			bottom: 0;
 			&__open-js {
 				animation: animateBgMenu 1s linear;

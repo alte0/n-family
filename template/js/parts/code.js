@@ -1,25 +1,30 @@
 (function($, undefined) {
 	$(function() {
+		// var sticky = $(document).find('#sticky');
 		//открытие меню
 		var header = $('#header');
-		var navigation = header.find('.main-navigation');
-		var menuWrap = header.find('.main-menu-wrap');
-		var panelMenu = header.find('.panel-menu');
-		var panelMenuItem = header.find('.panel-menu-item');
-		var menu  = header.find('.main-menu');
-		var clickPanelMenu = panelMenu.find('.link').on('click', function(event) {
-			navigation.toggleClass('main-navigation__open-js');
-			menuWrap.toggleClass('main-menu-wrap__open-js');
-			panelMenu.toggleClass('panel-menu__open-js');
-			panelMenuItem.toggleClass('panel-menu-item__open-js');
-			menu.toggleClass('main-menu__open-js');
-			return false;
+		// var navigation = $(document).find('.main-navigation');
+		// var menuWrap = $(document).find('.main-menu-wrap');
+		// var panelMenu = $(document).find('.panel-menu');
+		// var panelMenuItem = $(document).find('.panel-menu-item');
+		// var menu = $(document).find('.main-menu');
+		$(document).find('.main-navigation').find('.panel-menu').find('.link').on('click', function(event) {
+			menuToggle(event);
 		});
-		var sticky = $('#sticky');
-				sticky.fixTo('.main-navigation', {
-					useNativeSticky : false,
-					});
-				sticky.fixTo('stop');
+
+		function menuToggle(event) {
+			$(document).find('.main-navigation').toggleClass('main-navigation__open-js');
+			$(document).find('.main-menu-wrap').toggleClass('main-menu-wrap__open-js');
+			$(document).find('.panel-menu').toggleClass('panel-menu__open-js');
+			$(document).find('.panel-menu-item').toggleClass('panel-menu-item__open-js');
+			$(document).find('.main-menu').toggleClass('main-menu__open-js');
+			event.preventDefault();
+			event.stopPropagation();
+			return false;
+		}
+		//clone nav
+		var cloneNavigation = $(document).find('.main-navigation').clone(true);
+
 		// проверка на класс 
 		function checkClass(checkClass) {
 			var hasClass = 'slick-initialized';
@@ -43,26 +48,97 @@
 				sliderNewsClone = sliderNews.find('.news-article');
 
 		function widthSreen(widthWindow) {
+
 			if (widthWindow >= desktop) {
-				// console.log(widthWindow);
-				// console.log('больше' + desktop);
 					itemLinkContact.on('click', function(event) {
-						// event.preventDefault();
 						panelContact.css('display', 'block');
 						$(window).scrollTop(0);
 						return false;
-						/* Act on the event */
 					});
 					//инит стики меню
-						var clickPanelMenu = panelMenu.find('.link').on('click', function(event) {
-								if ( panelMenu.hasClass('panel-menu__open-js') ) {
-									sticky.fixTo('start');
-									// console.log('start:');
+						$(document).find('.panel-menu').find('.link').on('click', function(event) {
+
+								var sticky = $(document).find('.sticky');
+								var link = $(document).find('.panel-menu').find('.link');
+								if(link.length > 0) {
+									alert('найден')
+								}
+
+								if ( $(document).find('.panel-menu').hasClass('panel-menu__open-js') ) {
+									var widthStrut = sticky.outerWidth();
+									$(document).find('.main-navigation').prepend("<div class='strut'></div>");
+									$('.strut').css({
+										width: widthStrut,
+										visibility: 'hidden'
+									});
+									sticky.css({
+										position: 'fixed',
+										right: '0'
+									});
+
+									$(window).on('scroll', function(event) {
+
+										var windowScrollTopPosition = $(window).scrollTop();
+
+										var heightNavigation = $(document).find('.main-navigation').outerHeight();
+										var heightOfTopNavigation = $(document).find('.main-navigation').offset().top;
+										var heightSticky = sticky.outerHeight();
+										var heightOfTopSticky = sticky.offset().top;
+										var totalHeightNavigation = heightNavigation+heightOfTopNavigation;
+										var totalHeightSticky = heightSticky+heightOfTopSticky;
+
+										if ( (windowScrollTopPosition<50 && heightOfTopSticky<50) && $(document).find('.panel-menu').hasClass('panel-menu__open-js') ){
+											sticky.css({
+												position: 'fixed',
+												right: '0'
+											});
+										};
+										if ( totalHeightNavigation<=totalHeightSticky) {
+											sticky
+											.css({
+												position: 'absolute',
+												bottom: '0',
+												right: '0'
+											})
+											.stop()
+											.animate({
+												top: '0'
+											}, 1000, function(){
+												$(this).attr('style','');
+											});
+										}; 
+
+										//закрытие меню
+									  if ( ((windowScrollTopPosition-totalHeightNavigation) > -200) && $(document).find('.panel-menu').hasClass('panel-menu__open-js') ) {
+									  	menuToggle(event);
+									  }
+
+										
+									});
 								} else {
-									sticky.fixTo('stop');
-									// console.log('stop:');
+									$('.strut').remove();
+									sticky.removeAttr('style');
 								}
 						});
+					  //появление меню в сладере видео
+					  $(window).on('scroll', function(event) {
+							var windowScrollTopPosition = $(window).scrollTop();
+							var sliderVideoScrollTopPosition = sliderVideo.offset().top;
+						  if ( (windowScrollTopPosition+200) >= sliderVideoScrollTopPosition ) {
+						  	if ( sliderVideo.children('.main-navigation').length == 0) {
+						  		sliderVideo.append(cloneNavigation);
+						  		header.find('.main-navigation').detach();
+						  	}
+						  }
+						  if ( (windowScrollTopPosition+200) <= sliderVideoScrollTopPosition ) {
+						  	if ( header.find('.main-navigation').length == 0) {
+							  	sliderVideo.find('.main-navigation').detach();
+							  	header.find('.header-header').after(cloneNavigation);
+						  	}
+						  }
+
+						 });
+
 
 					if ( !checkClass(sliderVideo) ) {
 							sliderVideo.slick({
@@ -140,6 +216,7 @@
 							portfolio.mouseleave(function(event) {
 									portfolioBox.stop().animate({'left': '50%'}, 300);
 							});
+
 							
 			} else {
 				// console.log('меньше ' + desktop);
@@ -154,9 +231,6 @@
 					sliderNews.slick('unslick');
 					sliderNews.find('.news-article:nth-child(2)').remove();
 				}
-				// стики меню стоп
-				sticky.fixTo('stop');
-				// sticky2.fixTo('stop');
 			}
 		};
 		// узнаем ширину window
