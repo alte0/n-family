@@ -59,10 +59,6 @@
 						$(document).find('.panel-menu').find('.link').on('click', function(event) {
 
 								var sticky = $(document).find('.sticky');
-								var link = $(document).find('.panel-menu').find('.link');
-								if(link.length > 0) {
-									alert('найден')
-								}
 
 								if ( $(document).find('.panel-menu').hasClass('panel-menu__open-js') ) {
 									var widthStrut = sticky.outerWidth();
