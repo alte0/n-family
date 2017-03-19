@@ -66,6 +66,7 @@
 										visibility: 'hidden'
 									});
 
+									var statusAnimateMenu = true;
 									$(window).on('scroll', function(event) {
 
 										var windowScrollTopPosition = $(window).scrollTop();
@@ -76,34 +77,43 @@
 										var heightOfTopSticky = sticky.offset().top;
 										var totalHeightNavigation = heightNavigation+heightOfTopNavigation;
 										var totalHeightSticky = heightSticky+heightOfTopSticky;
-										var statusAnimateMenu;
 
 										if ( (windowScrollTopPosition >= heightOfTopNavigation) &&
 											panelMenu.hasClass('panel-menu__open-js') ){
-											sticky.css({
-												position: 'fixed',
-												right: '0',
-												bottom: '',
-												top: '0'
-											});
+											if (heightOfTopSticky == heightOfTopNavigation) {
+												if (statusAnimateMenu) {
+													sticky.css({
+														position: 'fixed',
+														right: '0',
+														bottom: '',
+														top: '0'
+													});
+												};
+											};
 										} else {
 											sticky.removeAttr('style');
 										};
+										if ( windowScrollTopPosition <= heightOfTopNavigation) {
+											statusAnimateMenu = true;
+										}
 										if ( ((windowScrollTopPosition+heightSticky) >= totalHeightNavigation) &&
 											panelMenu.hasClass('panel-menu__open-js') ) {
-											sticky.css({
-												position: 'absolute',
-												right: '0',
-												bottom: '0',
-												top: ''
-											})
-											// .stop()
-											// .animate({
-											// 	top: '0',
-											// 	bottom: '',
-											// }, 500, function(){
-											// 	$(this).attr('style','');
-											// });
+											if (statusAnimateMenu) {
+												sticky.css({
+													position: 'absolute',
+													right: '0',
+													bottom: '0',
+													top: ''
+												})
+												.stop()
+												.animate({
+													top: '0',
+													bottom: '',
+												}, 500, function(){
+													$(this).attr('style','');
+												});
+												statusAnimateMenu = false;
+											};
 										};
 
 										//закрытие меню
