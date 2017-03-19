@@ -8,6 +8,7 @@
 	background-size: cover;
 	@media (min-width: 1001px) {
 		display: block;
+		overflow: hidden;
 	}
 	&-item {
 		height: 100%;

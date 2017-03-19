@@ -1,29 +1,27 @@
 (function($, undefined) {
 	$(function() {
-		// var sticky = $(document).find('#sticky');
+
 		//открытие меню
 		var header = $('#header');
-		// var navigation = $(document).find('.main-navigation');
-		// var menuWrap = $(document).find('.main-menu-wrap');
-		// var panelMenu = $(document).find('.panel-menu');
-		// var panelMenuItem = $(document).find('.panel-menu-item');
-		// var menu = $(document).find('.main-menu');
-		$(document).find('.main-navigation').find('.panel-menu').find('.link').on('click', function(event) {
+		var navigation = $(document).find('.main-navigation');
+		var menuWrap = $(document).find('.main-menu-wrap');
+		var panelMenu = $(document).find('.panel-menu');
+		var panelMenuItem = $(document).find('.panel-menu-item');
+		var menu = $(document).find('.main-menu');
+		panelMenu.find('.link').on('click', function(event) {
 			menuToggle(event);
 		});
 
 		function menuToggle(event) {
-			$(document).find('.main-navigation').toggleClass('main-navigation__open-js');
-			$(document).find('.main-menu-wrap').toggleClass('main-menu-wrap__open-js');
-			$(document).find('.panel-menu').toggleClass('panel-menu__open-js');
-			$(document).find('.panel-menu-item').toggleClass('panel-menu-item__open-js');
-			$(document).find('.main-menu').toggleClass('main-menu__open-js');
+			navigation.toggleClass('main-navigation__open-js');
+			menuWrap.toggleClass('main-menu-wrap__open-js');
+			panelMenu.toggleClass('panel-menu__open-js');
+			panelMenuItem.toggleClass('panel-menu-item__open-js');
+			menu.toggleClass('main-menu__open-js');
 			event.preventDefault();
 			event.stopPropagation();
 			return false;
-		}
-		//clone nav
-		var cloneNavigation = $(document).find('.main-navigation').clone(true);
+		};
 
 		// проверка на класс 
 		function checkClass(checkClass) {
@@ -41,7 +39,6 @@
 
 		// sliders
 		var sliderVideo = $('#slideshow'),
-				// sliderReviews = $('.reviews-slider'),
 				sliderReviews = $('#reviews'),
 				sliderReviewsClone = sliderReviews.find('.reviews-item');
 				sliderNews = $('.news-article-slider');
@@ -56,82 +53,99 @@
 						return false;
 					});
 					//инит стики меню
-						$(document).find('.panel-menu').find('.link').on('click', function(event) {
+						panelMenu.find('.link').on('click', function(event) {
 
 								var sticky = $(document).find('.sticky');
 
-								if ( $(document).find('.panel-menu').hasClass('panel-menu__open-js') ) {
+								if ( panelMenu.hasClass('panel-menu__open-js') ) {
 									var widthStrut = sticky.outerWidth();
-									$(document).find('.main-navigation').prepend("<div class='strut'></div>");
-									$('.strut').css({
+									navigation.prepend("<div class='strut'></div>");
+									var strut = $('.strut');
+									strut.css({
 										width: widthStrut,
 										visibility: 'hidden'
-									});
-									sticky.css({
-										position: 'fixed',
-										right: '0'
 									});
 
 									$(window).on('scroll', function(event) {
 
 										var windowScrollTopPosition = $(window).scrollTop();
 
-										var heightNavigation = $(document).find('.main-navigation').outerHeight();
-										var heightOfTopNavigation = $(document).find('.main-navigation').offset().top;
+										var heightNavigation = navigation.outerHeight();
+										var heightOfTopNavigation = navigation.offset().top;
 										var heightSticky = sticky.outerHeight();
 										var heightOfTopSticky = sticky.offset().top;
 										var totalHeightNavigation = heightNavigation+heightOfTopNavigation;
 										var totalHeightSticky = heightSticky+heightOfTopSticky;
+										var statusAnimateMenu;
 
-										if ( (windowScrollTopPosition<50 && heightOfTopSticky<50) && $(document).find('.panel-menu').hasClass('panel-menu__open-js') ){
+										if ( (windowScrollTopPosition >= heightOfTopNavigation) &&
+											panelMenu.hasClass('panel-menu__open-js') ){
 											sticky.css({
 												position: 'fixed',
-												right: '0'
-											});
-										};
-										if ( totalHeightNavigation<=totalHeightSticky) {
-											sticky
-											.css({
-												position: 'absolute',
-												bottom: '0',
-												right: '0'
-											})
-											.stop()
-											.animate({
+												right: '0',
+												bottom: '',
 												top: '0'
-											}, 1000, function(){
-												$(this).attr('style','');
 											});
-										}; 
+										} else {
+											sticky.removeAttr('style');
+										};
+										if ( ((windowScrollTopPosition+heightSticky) >= totalHeightNavigation) &&
+											panelMenu.hasClass('panel-menu__open-js') ) {
+											sticky.css({
+												position: 'absolute',
+												right: '0',
+												bottom: '0',
+												top: ''
+											})
+											// .stop()
+											// .animate({
+											// 	top: '0',
+											// 	bottom: '',
+											// }, 500, function(){
+											// 	$(this).attr('style','');
+											// });
+										};
 
 										//закрытие меню
-									  if ( ((windowScrollTopPosition-totalHeightNavigation) > -200) && $(document).find('.panel-menu').hasClass('panel-menu__open-js') ) {
+									  if ( ((windowScrollTopPosition-totalHeightNavigation) > -200) &&
+									   panelMenu.hasClass('panel-menu__open-js') ) {
 									  	menuToggle(event);
-									  }
-
-										
+									  	sticky.removeAttr('style');
+									  	strut.remove();
+									  };
 									});
 								} else {
 									$('.strut').remove();
 									sticky.removeAttr('style');
-								}
+								};
 						});
 					  //появление меню в сладере видео
 					  $(window).on('scroll', function(event) {
 							var windowScrollTopPosition = $(window).scrollTop();
 							var sliderVideoScrollTopPosition = sliderVideo.offset().top;
+							var navigation;
 						  if ( (windowScrollTopPosition+200) >= sliderVideoScrollTopPosition ) {
 						  	if ( sliderVideo.children('.main-navigation').length == 0) {
-						  		sliderVideo.append(cloneNavigation);
-						  		header.find('.main-navigation').detach();
-						  	}
+							  	if (panelMenu.hasClass('panel-menu__open-js')) {
+						  			$('.strut').remove();
+							  	}
+						  		navigation = header.find('.main-navigation').detach();
+						  		navigation.find('.panel-menu-item').css({right:'-500px'});
+						  		sliderVideo.append(navigation);
+							  	panelMenuItem
+								  	.stop()
+								  	.animate({right: '0px'}, 1000);
+						  	};
 						  }
 						  if ( (windowScrollTopPosition+200) <= sliderVideoScrollTopPosition ) {
 						  	if ( header.find('.main-navigation').length == 0) {
-							  	sliderVideo.find('.main-navigation').detach();
-							  	header.find('.header-header').after(cloneNavigation);
-						  	}
-						  }
+							  	if (panelMenu.hasClass('panel-menu__open-js')) {
+						  			$('.strut').remove();
+							  	}
+							  	navigation = sliderVideo.find('.main-navigation').detach();
+							  	header.find('.header-header').after(navigation);
+							  };
+						  };
 
 						 });
 

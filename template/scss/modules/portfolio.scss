@@ -1,3 +1,7 @@
+@-ms-keyframes animatewith {
+	0% {flex-grow: 1}
+	100% {flex-grow: 10}
+}
 @keyframes animatewith {
 	0% {flex-grow: 1}
 	100% {flex-grow: 10}
@@ -39,7 +43,11 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 		flex-grow: 1;
+		align-items: center;
 		@media (min-width: 361px) and (max-width: 1000px) {
 			height: 574px;
 		}
@@ -98,8 +106,10 @@
 			display: flex;
 			flex-direction: column;
 			flex-basis: 100%;
+			// max-width: 100%;
 			@media (min-width: 1001px) {
 				flex-direction: row;
+				justify-content: space-between;
 			}
 		}
 		&-title {
@@ -109,13 +119,7 @@
 			color: white;
 			font-size: 29.17px;
 			line-height: 24.39px;
-			// width: 180px;
 			position: relative;
-			left: 50%;
-			top: 55%;
-			margin: 0;
-			transform: translate(-50%, -50%);
-			display: inline-block;
 			@media (min-width: 361px) and (max-width: 1000px) {
 				// font-size: 79.17px;
 				font-size: calc( (100vw - 361px)/(1000 - 361) * (79.17 - 29.17) + 29.17px);
