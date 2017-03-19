@@ -15902,7 +15902,7 @@ return jQuery;
 										} else {
 											sticky.removeAttr('style');
 										};
-										if ( windowScrollTopPosition <= heightOfTopNavigation) {
+										if ( windowScrollTopPosition <= (heightOfTopNavigation+10) ) {
 											statusAnimateMenu = true;
 										}
 										if ( ((windowScrollTopPosition+heightSticky) >= totalHeightNavigation) &&
