@@ -5,7 +5,7 @@
 		var header = $('#header');
 		var navigation = $(document).find('.main-navigation');
 		var menuWrap = $(document).find('.main-menu-wrap');
-		var panelMenu = $(document).find('.panel-menu');
+		var panelMenu = $('.panel-menu');
 		var panelMenuItem = $(document).find('.panel-menu-item');
 		var menu = $(document).find('.main-menu');
 		panelMenu.find('.link').on('click', function(event) {
@@ -21,9 +21,9 @@
 			event.preventDefault();
 			event.stopPropagation();
 			return false;
-		};
+		}
 
-		// проверка на класс 
+		// проверка на класс .slick-initialized
 		function checkClass(checkClass) {
 			var hasClass = 'slick-initialized';
 			if ( checkClass.hasClass(hasClass) ) {
@@ -43,99 +43,105 @@
 				sliderReviewsClone = sliderReviews.find('.reviews-item');
 				sliderNews = $('.news-article-slider');
 				sliderNewsClone = sliderNews.find('.news-article');
+		// узнаем ширину window
+		var widthWindow = $(window).width();
+		widthSreen(widthWindow);
+		$(window).on('resize', function(event) {
+	    widthWindow = $(this).width();
+	    widthSreen(widthWindow);
+		});
 
 		function widthSreen(widthWindow) {
 
 			if (widthWindow >= desktop) {
-					itemLinkContact.on('click', function(event) {
-						panelContact.css('display', 'block');
-						$(window).scrollTop(0);
-						return false;
-					});
+				itemLinkContact.on('click', function(event) {
+					panelContact.css('display', 'block');
+					$(window).scrollTop(0);
+					return false;
+				});
 					//инит стики меню
-						panelMenu.find('.link').on('click', function(event) {
+					panelMenu.find('.link').on('click', function(event) {
 
-								var sticky = $(document).find('.sticky');
+						var sticky = $(document).find('.sticky');
 
-								if ( panelMenu.hasClass('panel-menu__open-js') ) {
-									var widthStrut = sticky.outerWidth();
-									navigation.prepend("<div class='strut'></div>");
-									var strut = $('.strut');
-									strut.css({
-										width: widthStrut,
-										visibility: 'hidden'
-									});
+						if ( panelMenu.hasClass('panel-menu__open-js') ) {
+							var widthStrut = sticky.outerWidth();
+							navigation.prepend("<div class='strut'></div>");
+							var strut = $('.strut');
+							strut.css({
+								width: widthStrut,
+								visibility: 'hidden'
+							});
 
-									var statusAnimateMenu = true;
-									$(window).on('scroll', function(event) {
+							var statusAnimateMenu = true;
+							$(window).on('scroll', function(event) {
 
-										var windowScrollTopPosition = $(window).scrollTop();
+								var windowScrollTopPosition = $(window).scrollTop();
+								var heightNavigation = navigation.outerHeight();
+								var heightOfTopNavigation = navigation.offset().top;
+								var heightSticky = sticky.outerHeight();
+								var heightOfTopSticky = sticky.offset().top;
+								var totalHeightNavigation = heightNavigation+heightOfTopNavigation;
+								var totalHeightSticky = heightSticky+heightOfTopSticky;
 
-										var heightNavigation = navigation.outerHeight();
-										var heightOfTopNavigation = navigation.offset().top;
-										var heightSticky = sticky.outerHeight();
-										var heightOfTopSticky = sticky.offset().top;
-										var totalHeightNavigation = heightNavigation+heightOfTopNavigation;
-										var totalHeightSticky = heightSticky+heightOfTopSticky;
-
-										if ( (windowScrollTopPosition >= heightOfTopNavigation) &&
-											panelMenu.hasClass('panel-menu__open-js') ){
-											if (heightOfTopSticky == heightOfTopNavigation) {
-												if (statusAnimateMenu) {
-													sticky.css({
-														position: 'fixed',
-														right: '0',
-														bottom: '',
-														top: '0'
-													});
-												};
-											};
-										} else {
-											sticky.removeAttr('style');
-										};
-										if ( windowScrollTopPosition <= (heightOfTopNavigation+10) ) {
-											statusAnimateMenu = true;
+								if ( (windowScrollTopPosition >= heightOfTopNavigation) &&
+								panelMenu.hasClass('panel-menu__open-js') ){
+									if (heightOfTopSticky == heightOfTopNavigation) {
+										if (statusAnimateMenu) {
+											sticky.css({
+												position: 'fixed',
+												right: '0',
+												bottom: '',
+												top: '0'
+											});
 										}
-										if ( ((windowScrollTopPosition+heightSticky) >= totalHeightNavigation) &&
-											panelMenu.hasClass('panel-menu__open-js') ) {
-											if (statusAnimateMenu) {
-												sticky.css({
-													position: 'absolute',
-													right: '0',
-													bottom: '0',
-													top: ''
-												})
-												.stop()
-												.animate({
-													top: '0',
-													bottom: '',
-												}, 500, function(){
-													$(this).attr('style','');
-												});
-												statusAnimateMenu = false;
-											};
-										};
-
-										//закрытие меню
-									  if ( ((windowScrollTopPosition-totalHeightNavigation) > -200) &&
-									   panelMenu.hasClass('panel-menu__open-js') ) {
-									  	menuToggle(event);
-									  	sticky.removeAttr('style');
-									  	strut.remove();
-									  };
-									});
+									}
 								} else {
-									$('.strut').remove();
 									sticky.removeAttr('style');
-								};
+								}
+								if ( windowScrollTopPosition <= (heightOfTopNavigation+10) ) {
+									statusAnimateMenu = true;
+								}
+								if ( ((windowScrollTopPosition+heightSticky) >= totalHeightNavigation) &&
+								panelMenu.hasClass('panel-menu__open-js') ) {
+									if (statusAnimateMenu) {
+										sticky.css({
+											position: 'absolute',
+											right: '0',
+											bottom: '0',
+											top: ''
+										})
+										.stop()
+										.animate({
+											top: '0',
+											bottom: '',
+										}, 500, function(){
+											$(this).attr('style','');
+										});
+										statusAnimateMenu = false;
+									}
+								}
+
+								//закрытие меню
+							  if ( ((windowScrollTopPosition-totalHeightNavigation) > -200) &&
+								panelMenu.hasClass('panel-menu__open-js') ) {
+							  	menuToggle(event);
+							  	sticky.removeAttr('style');
+							  	strut.remove();
+									}
+										});
+									} else {
+										$('.strut').remove();
+										sticky.removeAttr('style');
+									}
 						});
 					  //появление меню в сладере видео
-					  $(window).on('scroll', function(event) {
+					  var fscroll = $(window).on('scroll', function(event) {
 							var windowScrollTopPosition = $(window).scrollTop();
 							var sliderVideoScrollTopPosition = sliderVideo.offset().top;
 							var navigation;
 						  if ( (windowScrollTopPosition+200) >= sliderVideoScrollTopPosition ) {
-						  	if ( sliderVideo.children('.main-navigation').length == 0) {
+						  	if ( sliderVideo.children('.main-navigation').length === 0) {
 							  	if (panelMenu.hasClass('panel-menu__open-js')) {
 						  			$('.strut').remove();
 							  	}
@@ -145,18 +151,17 @@
 							  	panelMenuItem
 								  	.stop()
 								  	.animate({right: '0px'}, 1000);
-						  	};
+						  	}
 						  }
 						  if ( (windowScrollTopPosition+200) <= sliderVideoScrollTopPosition ) {
-						  	if ( header.find('.main-navigation').length == 0) {
+						  	if ( header.find('.main-navigation').length === 0) {
 							  	if (panelMenu.hasClass('panel-menu__open-js')) {
 						  			$('.strut').remove();
 							  	}
 							  	navigation = sliderVideo.find('.main-navigation').detach();
 							  	header.find('.header-header').after(navigation);
-							  };
-						  };
-
+							  }
+						  }
 						 });
 
 
@@ -228,7 +233,7 @@
 									default:
 										percent = "50%";
 										break;
-								};
+								}
 								portfolioBox.stop().animate({
 									'left': percent
 								}, 700);
@@ -237,9 +242,9 @@
 									portfolioBox.stop().animate({'left': '50%'}, 300);
 							});
 
-							
+
 			} else {
-				// console.log('меньше ' + desktop);
+				$(window).unbind('scroll', fscroll);
 				if ( checkClass(sliderVideo) ) {
 					sliderVideo.slick('unslick');
 				}
@@ -252,18 +257,11 @@
 					sliderNews.find('.news-article:nth-child(2)').remove();
 				}
 			}
-		};
-		// узнаем ширину window
-		var widthWindow = $(window).width();
-		$(window).ready(widthSreen(widthWindow)).resize(function() {
-	    var widthWindow = $(this).width();
-	    widthSreen(widthWindow);
-		});
+		}
 
 		//закрываем выпадаюшие инфо
 		closeButtonPanelContact = $('#contacts-close');
 		closeButtonPanelContact.click(function(event) {
-			/* Act on the event */
 			panelContact.css('display', 'none');
 			return false;
 		});
@@ -349,7 +347,7 @@
         }
     });
 
-      // 
+      //
       var btnPlay = $('.video-control-group-item__pause-play');
       btnPlay.click(function(event) {
       	/* Act on the event */
@@ -362,7 +360,7 @@
       	btnSound.find('.link').toggleClass('on-sound-js');
       	return false;
       });
-			
+
 
 	});
 })(jQuery);
